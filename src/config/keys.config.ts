@@ -3,6 +3,7 @@ import devConfig from './dev.config';
 export interface IConfig {
 	env: string;
 	port: number;
+	mongoURI?: string;
 }
 let config: IConfig = {
 	env: 'development',
