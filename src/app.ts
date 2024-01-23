@@ -1,6 +1,8 @@
 import express from 'express';
 import morgan from 'morgan';
 import config from './config/keys.config';
+import globalErrorHandler from './controllers/error.controller';
+import AppError from './utils/AppError.util';
 
 export const app = express();
 
@@ -17,3 +19,10 @@ config.env === 'development' ? app.use(morgan('dev')) : null;
 app.get('/healthz', (req, res) => {
 	res.status(200).json({ message: 'OK' });
 });
+
+// handle undefined routes
+app.all('*', (req, res, next) => {
+	next(new AppError(`Can't find ${req.originalUrl} on this server`, 404));
+});
+
+app.use(globalErrorHandler);
