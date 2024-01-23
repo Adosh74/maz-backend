@@ -1,7 +1,7 @@
 import dotenv from 'dotenv';
 import { IConfig } from './keys.config';
 
-dotenv.config();
+dotenv.config({ path: `${process.cwd()}/dev.env` });
 
 const { NODE_ENV, PORT } = process.env;
 
