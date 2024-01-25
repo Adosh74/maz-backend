@@ -1,0 +1,21 @@
+# ERD: MAZRealty
+
+This document explores the design of MAZRealty, a social experience for sharing useful programming resources.
+
+We'll use a basic client/server architecture, where a single server is deployed on a cloud provider next to a relational database, and serving HTTP traffic from a public endpoint.
+
+## Schema
+
+**users:**
+
+| Column               | Type   | Validation/Options                                              |
+| -------------------- | ------ | --------------------------------------------------------------- |
+| name                 | String | Required, Trimmed, Maximum length: 255 characters               |
+| email                | String | Required, Unique, Lowercased, Validated as an email             |
+| photo                | String | Default: 'default.jpg'                                          |
+| role                 | String | Enum: ['user', 'guide', 'lead-guide', 'admin'], Default: 'user' |
+| password             | String | Required, Minimum length: 8 characters, Select: false           |
+| passwordConfirm      | String | Required, Validation function checks if it matches password     |
+| passwordChangedAt    | Date   |                                                                 |
+| passwordResetToken   | String |                                                                 |
+| passwordResetExpires | Date   |                                                                 |
