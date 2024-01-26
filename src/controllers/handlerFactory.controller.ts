@@ -56,7 +56,7 @@ export const createOne = (Model: Model<any>) =>
 export const updateOne = (Model: Model<any>) =>
 	catchAsyncUtil(async (req: Request, res: Response, next: NextFunction) => {
 		const { id } = req.params;
-		const doc = Model.findByIdAndUpdate(id, req.body, {
+		const doc = await Model.findByIdAndUpdate(id, req.body, {
 			new: true,
 			runValidators: true,
 		});
