@@ -4,6 +4,11 @@ export interface IConfig {
 	env: string;
 	port: number;
 	mongoURI?: string;
+	sendInBlueEmail?: string;
+	sendInBlueHost?: string;
+	sendInBluePort?: number;
+	sendInBlueUsername?: string;
+	sendInBluePassword?: string;
 }
 let config: IConfig = {
 	env: 'development',
