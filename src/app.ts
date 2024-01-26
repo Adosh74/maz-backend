@@ -2,6 +2,7 @@ import express from 'express';
 import morgan from 'morgan';
 import config from './config/keys.config';
 import globalErrorHandler from './controllers/error.controller';
+import routes from './routes/index.route';
 import AppError from './utils/AppError.util';
 
 export const app = express();
@@ -19,6 +20,9 @@ config.env === 'development' ? app.use(morgan('dev')) : null;
 app.get('/healthz', (req, res) => {
 	res.status(200).json({ message: 'OK' });
 });
+
+// API routes
+app.use('/api/v1', routes);
 
 // handle undefined routes
 app.all('*', (req, res, next) => {
