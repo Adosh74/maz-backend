@@ -18,8 +18,9 @@ module.exports = {
 			'warn',
 			{ endOfLine: 'auto', singleQuote: true, parser: 'flow' },
 		],
-		'no-var': 'error',
+		'no-var': 2,
 		'@typescript-eslint/no-explicit-any': 'off',
 		'@typescript-eslint/no-unused-vars': 'warn',
+		'no-console': 1,
 	},
 };
