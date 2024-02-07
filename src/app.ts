@@ -1,3 +1,4 @@
+import cookieParser from 'cookie-parser';
 import express from 'express';
 import morgan from 'morgan';
 import config from './config/keys.config';
@@ -11,6 +12,9 @@ export const app = express();
 // parse application/json and url-encoded forms
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+// parse cookies
+app.use(cookieParser());
 
 // development logging
 config.env === 'development' ? app.use(morgan('dev')) : null;
