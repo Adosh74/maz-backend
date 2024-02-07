@@ -1,13 +1,14 @@
-import crypto from 'crypto';
-import ejs from 'ejs';
+// import crypto from 'crypto';
+// import ejs from 'ejs';
 import { NextFunction, Request, Response } from 'express';
 import jwt, { JwtPayload } from 'jsonwebtoken';
-import path from 'path';
+// import path from 'path';
 import config from '../config/keys.config';
 import User, { IUserSchema } from '../models/user.model';
 import AppError from '../utils/AppError.util';
 import catchAsync from '../utils/catchAsync.util';
-import sendEmail from '../utils/mail';
+
+// import sendEmail from '../utils/mail';
 
 // *** Sign JWT token
 const signToken = (id: string) =>
@@ -172,3 +173,15 @@ export const protect = catchAsync(
 		next();
 	}
 );
+
+// *** restrict to specific roles (middleware)
+export const restrictTo =
+	(...roles: string[]) =>
+	(req: Request, res: Response, next: NextFunction) => {
+		if (!roles.includes((req as any).user.role)) {
+			return next(
+				new AppError('You do not have permission to perform this action', 403)
+			);
+		}
+		next();
+	};
