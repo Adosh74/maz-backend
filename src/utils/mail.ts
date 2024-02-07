@@ -10,35 +10,31 @@ interface IEmailOptions {
 	data: { [key: string]: any };
 }
 
-// send email function using nodemailer and sendinblue smtp
-const sendEmail = async ({ email, subject, template, data }: IEmailOptions) => {
-	// +[1] create transporter
+const sendMail = async (options: IEmailOptions): Promise<void> => {
 	const transporter: Transporter = nodemailer.createTransport({
-		service: 'mandrillapp',
-		host: config.sendInBlueHost,
-		port: config.sendInBluePort,
+		host: `${config.smtpHost}`,
+		port: config.smtpPort,
+		pool: true,
+		service: `${config.smtpService}`,
 		auth: {
-			user: config.sendInBlueUsername,
-			pass: config.sendInBluePassword,
+			user: `${config.smtpUser}`,
+			pass: `${config.smtpPass}`,
 		},
 	});
 
-	// +[2] get email template path
-	const templatePath = path.join(__dirname, `../mails/${template}`);
+	const { email, subject, template, data } = options;
 
-	// +[3] render email template with ejs
-	const html = await ejs.renderFile(templatePath, data);
+	const templateFile = path.join(__dirname, `./../mails/${template}`);
 
-	// +[4] email options
-	const emailOptions = {
-		from: `Maz Realty Team <${config.sendInBlueEmail}>`,
+	const html: string = await ejs.renderFile(templateFile, data);
+
+	const mailOptions = {
+		from: process.env.MAIL_USER,
 		to: email,
 		subject,
 		html,
 	};
-
-	// +[5] send email
-	await transporter.sendMail(emailOptions);
+	await transporter.sendMail(mailOptions);
 };
 
-export default sendEmail;
+export default sendMail;
