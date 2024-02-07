@@ -1,4 +1,5 @@
 import cookieParser from 'cookie-parser';
+import cors from 'cors';
 import express from 'express';
 import morgan from 'morgan';
 import config from './config/keys.config';
@@ -15,6 +16,9 @@ app.use(express.urlencoded({ extended: true }));
 
 // parse cookies
 app.use(cookieParser());
+
+// enable cors
+app.use(cors());
 
 // development logging
 config.env === 'development' ? app.use(morgan('dev')) : null;
