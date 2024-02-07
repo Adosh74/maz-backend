@@ -158,10 +158,7 @@ export const protect = catchAsync(
 		}
 
 		// +[6] Check if user changed password after the token was issued
-		if (
-			currentUser.passwordChangedAt &&
-			decoded.iat < currentUser.passwordChangedAt.getTime() / 1000
-		) {
+		if (currentUser.passwordChangedAfter(decoded.iat)) {
 			return next(
 				new AppError('User recently changed password! Please log in again', 401)
 			);
@@ -185,3 +182,29 @@ export const restrictTo =
 		}
 		next();
 	};
+
+// *** update password
+export const updatePassword = catchAsync(
+	async (req: Request, res: Response, next: NextFunction) => {
+		// +[1] Get user info
+		const user = await User.findById((req as any).user.id).select('+password');
+
+		// +[2] Check if user exists
+		if (!user) {
+			return next(new AppError('User not found', 404));
+		}
+
+		// +[3] Check if posted password is correct
+		if (!(await user?.correctPassword(req.body.passwordCurrent, user.password))) {
+			return next(new AppError('Your current password is wrong', 401));
+		}
+
+		// +[4] Update password
+		user.password = req.body.password;
+		user.passwordConfirm = req.body.passwordConfirm;
+		await user.save();
+
+		// +[5] Log user in, send JWT
+		createSendToken(user, 200, res);
+	}
+);
