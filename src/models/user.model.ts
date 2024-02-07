@@ -3,8 +3,9 @@ import crypto from 'crypto';
 import mongoose, { Schema, Document, Model } from 'mongoose';
 import validator from 'validator';
 
-interface IUserSchema extends Document {
+export interface IUserSchema extends Document {
 	_id: string;
+	name: string;
 	email: string;
 	photo: {
 		public_id: string;
