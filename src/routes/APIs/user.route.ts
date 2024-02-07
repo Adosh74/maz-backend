@@ -9,11 +9,16 @@ const routes = Router();
 // this should be a protected route (only for admins) - for testing purposes only
 routes.route('/').get(userController.getAllUsers).post(userController.createUser);
 
-// get current user
-routes
-	.route('/me')
-	.get(authController.protect, userController.getMe, userController.getOneUser);
+// *** Protected routes *** //
+routes.use(authController.protect);
+// update password
+routes.route('/updateMyPassword').patch(authController.updatePassword);
 
+// get current user
+routes.route('/me').get(userController.getMe, userController.getOneUser);
+
+// *** restrict to specific roles (middleware) *** //
+routes.use(authController.restrictTo('admin'));
 routes
 	.route('/:id')
 	.get(userController.getOneUser)
