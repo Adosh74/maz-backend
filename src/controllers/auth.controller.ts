@@ -65,24 +65,24 @@ export const signup = catchAsync(
 		});
 
 		// +[3] user data to send email
-		const user = {
-			name: newUser.name.split(' ')[0],
-		};
+		// const user = {
+		// 	name: newUser.name.split(' ')[0],
+		// };
 
-		// +[4] html template path
-		const html = await ejs.renderFile(
-			path.join(__dirname, './../mails/welcome.ejs'),
-			{
-				user,
-			}
-		);
+		// // +[4] html template path
+		// const html = await ejs.renderFile(
+		// 	path.join(__dirname, './../mails/welcome.ejs'),
+		// 	{
+		// 		user,
+		// 	}
+		// );
 
-		await sendEmail({
-			email: newUser.email,
-			subject: 'Welcome to the MAZ Realty!',
-			template: 'welcome.ejs',
-			data: { user },
-		});
+		// await sendEmail({
+		// 	email: newUser.email,
+		// 	subject: 'Welcome to the MAZ Realty!',
+		// 	template: 'welcome.ejs',
+		// 	data: { user },
+		// });
 
 		// +[5] Send token
 		createSendToken(newUser, 201, res);
