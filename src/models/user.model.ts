@@ -12,6 +12,8 @@ export interface IUserSchema extends Document {
 		url: string;
 	};
 	role: string;
+	phone?: string;
+	whatsapp?: string;
 	password: string;
 	passwordConfirm?: string;
 	passwordChangedAt?: Date;
@@ -48,6 +50,14 @@ const userSchema: Schema<IUserSchema> = new Schema({
 		type: String,
 		enum: ['user', 'admin', 'lawyer'],
 		default: 'user',
+	},
+	phone: {
+		type: String,
+		trim: true,
+	},
+	whatsapp: {
+		type: String,
+		trim: true,
 	},
 	password: {
 		type: String,
