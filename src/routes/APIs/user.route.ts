@@ -6,7 +6,6 @@ const routes = Router();
 
 // *** Routes *** //
 
-// this should be a protected route (only for admins) - for testing purposes only
 routes.route('/').get(userController.getAllUsers).post(userController.createUser);
 
 // *** Protected routes *** //
