@@ -4,6 +4,21 @@ This document explores the design of MAZRealty, a social experience for sharing 
 
 We'll use a basic client/server architecture, where a single server is deployed on a cloud provider next to a relational database, and serving HTTP traffic from a public endpoint.
 
+## APIs
+
+**users:**
+
+-   `POST /api/v1/users/` - Create a new user
+-   `GET /api/v1/users/` - Get all users
+-   `GET /api/v1/users/:id` - Get a user
+-   `PATCH /api/v1/users/:id` - Update a user (only for admin)
+-   `DELETE /api/v1/users/:id` - Delete a user (only for admin)
+
+**auth:**
+
+-   `POST /api/v1/auth/signup` - Sign up and get a token
+-   `POST /api/v1/auth/login` - Log in and get a token
+
 ## Schema
 
 **users:**
