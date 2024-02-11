@@ -31,6 +31,8 @@ app.use((req, res, next) => {
 	res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, PATCH, OPTIONS');
 	next();
 });
+// middleware to enable flutter mobile app to connect to the server
+app.options('*', cors());
 
 // development logging
 config.env === 'development' ? app.use(morgan('dev')) : null;
