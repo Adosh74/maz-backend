@@ -9,12 +9,15 @@ import AppError from './utils/AppError.util';
 
 if (!config.mongoURI) new AppError('MongoURI not found', 500);
 mongoose
-	.connect(config.mongoURI, {
-		useNewUrlParser: true,
-		useUnifiedTopology: true,
-		useCreateIndex: true,
-		useFindAndModify: false,
-	})
+	.connect(
+		'mongodb+srv://mazrealty:bXk41XT1QpF0Ym3o@mazrealty.0u1azjg.mongodb.net/mazrealty',
+		{
+			useNewUrlParser: true,
+			useUnifiedTopology: true,
+			useCreateIndex: true,
+			useFindAndModify: false,
+		}
+	)
 	.then((data) => {
 		console.log(colors.bgMagenta(`${data.connection.name} 'connected to MongoDB`));
 
