@@ -19,6 +19,7 @@ export interface IPropertySchema extends Document {
 		address: string;
 		description: string;
 	};
+	find: (query: any) => any;
 }
 
 const propertySchema: Schema<IPropertySchema> = new Schema({
@@ -64,6 +65,27 @@ const propertySchema: Schema<IPropertySchema> = new Schema({
 		address: String,
 		description: String,
 	},
+});
+
+// add indexes improve the performance of the queries
+propertySchema.index({ location: '2dsphere' });
+propertySchema.index({ price: 1 });
+
+// *** Query Middleware
+
+// +[1] serve owner info when findOne Property
+propertySchema.pre(/^findOne/, function (next) {
+	this.populate({
+		path: 'owner',
+		select: '-__v -passwordChangedAt -role',
+	});
+	next();
+});
+
+// +[2] not serve Property is not approved
+propertySchema.pre(/^find/, function (next) {
+	this.find({ approved: { $ne: false } });
+	next();
 });
 
 const User: Model<IPropertySchema> = mongoose.model('Property', propertySchema);
