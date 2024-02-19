@@ -83,11 +83,11 @@ propertySchema.pre(/^findOne/, function (next) {
 });
 
 // +[2] not serve Property is not approved
-propertySchema.pre(/^find/, function (next) {
-	this.find({ approved: { $ne: false } });
-	next();
-});
+// propertySchema.pre(/^find/, function (next) {
+// 	this.find({ approved: { $ne: false } });
+// 	next();
+// });
 
-const User: Model<IPropertySchema> = mongoose.model('Property', propertySchema);
+const Property: Model<IPropertySchema> = mongoose.model('Property', propertySchema);
 
-export default User;
+export default Property;
