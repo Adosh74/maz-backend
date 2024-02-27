@@ -97,15 +97,6 @@ propertySchema.pre('save', async function (next) {
 
 // *** Query Middleware
 
-// +[1] serve owner info when findOne Property
-propertySchema.pre(/^findOne/, function (next) {
-	this.populate({
-		path: 'owner',
-		select: '-__v -passwordChangedAt -role',
-	});
-	next();
-});
-
 // +[2] not serve Property is not approved
 // propertySchema.pre(/^find/, function (next) {
 // 	this.find({ approved: { $ne: false } });
