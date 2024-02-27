@@ -6,8 +6,10 @@ export interface IPropertySchema extends Document {
 	description: string;
 	price: number;
 	owner: {
-		type: mongoose.Schema.Types.ObjectId;
-		ref: string;
+		_id: string;
+		name: string;
+		phone: string;
+		whatsapp: string;
 	};
 	address: string;
 	images: [string];
@@ -39,8 +41,18 @@ const propertySchema: Schema<IPropertySchema> = new Schema({
 		required: [true, 'The Property must has a price'],
 	},
 	owner: {
-		type: Schema.Types.ObjectId,
-		ref: 'User',
+		_id: {
+			type: String,
+		},
+		name: {
+			type: String,
+		},
+		phone: {
+			type: String,
+		},
+		whatsapp: {
+			type: String,
+		},
 	},
 	address: {
 		type: String,
@@ -70,6 +82,18 @@ const propertySchema: Schema<IPropertySchema> = new Schema({
 // add indexes improve the performance of the queries
 propertySchema.index({ location: '2dsphere' });
 propertySchema.index({ price: 1 });
+
+// pre save middleware to populate owner info before saving
+propertySchema.pre('save', async function (next) {
+	const owner = await this.model('User').findById(this.owner._id);
+	this.owner = {
+		_id: owner?._id,
+		name: owner?.name,
+		phone: owner?.phone,
+		whatsapp: owner?.whatsapp,
+	};
+	next();
+});
 
 // *** Query Middleware
 
