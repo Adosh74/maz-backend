@@ -62,6 +62,8 @@ export const signup = catchAsync(
 			email: req.body.email,
 			password: req.body.password,
 			passwordConfirm: req.body.passwordConfirm,
+			whatsapp: req.body.whatsapp,
+			phone: req.body.phone,
 		});
 
 		// +[3] user data to send email
