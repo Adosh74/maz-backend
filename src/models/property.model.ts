@@ -1,26 +1,28 @@
 import mongoose, { Schema, Document, Model } from 'mongoose';
 
+interface IOwner {
+	_id: string;
+	name: string;
+	phone: string;
+	whatsapp: string;
+}
+interface ILocation {
+	type: string;
+	coordinates: [number];
+	address: string;
+	description: string;
+}
 export interface IPropertySchema extends Document {
 	_id: string;
 	name: string;
 	description: string;
 	price: number;
-	owner: {
-		_id: string;
-		name: string;
-		phone: string;
-		whatsapp: string;
-	};
+	owner: IOwner;
 	address: string;
 	images: [string];
 	contract: string;
 	approved: boolean;
-	location: {
-		type: string;
-		coordinates: [number];
-		address: string;
-		description: string;
-	};
+	location: ILocation;
 	find: (query: any) => any;
 }
 
