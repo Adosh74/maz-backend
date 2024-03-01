@@ -3,9 +3,6 @@ import mongoose, { Schema, Document, Model } from 'mongoose';
 export interface IUserFavorite extends Document {
 	user: string;
 	property: string;
-
-	// static methods
-	findUserFavorites(userId: string): Promise<IUserFavorite[]>;
 }
 
 interface IUserFavoriteModel extends Model<IUserFavorite> {
