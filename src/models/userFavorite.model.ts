@@ -3,9 +3,16 @@ import mongoose, { Schema, Document, Model } from 'mongoose';
 export interface IUserFavorite extends Document {
 	user: string;
 	property: string;
+
+	// static methods
+	findUserFavorites(userId: string): Promise<IUserFavorite[]>;
 }
 
-const userFavoriteSchema: Schema<IUserFavorite> = new Schema({
+interface IUserFavoriteModel extends Model<IUserFavorite> {
+	findUserFavorites(userId: string): Promise<IUserFavorite[]>;
+}
+
+const userFavoriteSchema = new Schema<IUserFavorite, IUserFavoriteModel>({
 	user: {
 		type: Schema.Types.ObjectId,
 		ref: 'User',
@@ -23,7 +30,7 @@ userFavoriteSchema.statics.findUserFavorites = async function (userId: string) {
 	return this.find({ user: userId }).populate('property');
 };
 
-const UserFavorite: Model<IUserFavorite> = mongoose.model(
+const UserFavorite = mongoose.model<IUserFavorite, IUserFavoriteModel>(
 	'UserFavorite',
 	userFavoriteSchema
 );
