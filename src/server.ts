@@ -5,7 +5,7 @@ import { LOGGER } from './logging';
 
 dotenv.config({ path: `${process.cwd()}/.env` });
 
-const { PORT, MONGO_URI, env } = process.env;
+const { PORT, MONGO_URI, NODE_ENV } = process.env;
 
 if (!MONGO_URI || !PORT) {
 	LOGGER.error('Please make sure that you have a valid mongoURI and port');
@@ -22,7 +22,7 @@ mongoose
 	.then((data) => {
 		LOGGER.info(`Connected to MongoDB ${data.connection.name} database`);
 		server.listen(PORT, () =>
-			LOGGER.info(`Listening on port ${PORT} in ${env} environment`)
+			LOGGER.info(`Listening on port ${PORT} in ${NODE_ENV} environment`)
 		);
 	})
 	.catch((err) => {
