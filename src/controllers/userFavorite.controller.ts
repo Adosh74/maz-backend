@@ -55,3 +55,30 @@ export const getFavorites = catchAsync(async (req: Request, res: Response) => {
 		},
 	});
 });
+
+// *** deleteFavorite ***
+export const deleteFavorite = catchAsync(
+	async (req: Request, res: Response, next: NextFunction) => {
+		const { id } = req.params;
+		const userId = (req as any).user._id;
+
+		// +[1] check if user has favorited the property
+		const favorite = await UserFavorite.findById(id);
+
+		if (!favorite) {
+			return next(new AppError('Favorite not found', 404));
+		}
+
+		if (favorite.user.toString() !== userId.toString()) {
+			return next(new AppError('Unauthorized', 401));
+		}
+
+		// +[2] delete favorite
+		await UserFavorite.findByIdAndDelete(id);
+
+		res.status(204).json({
+			status: 'success',
+			data: null,
+		});
+	}
+);
