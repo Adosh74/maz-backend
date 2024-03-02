@@ -6,7 +6,7 @@ import { LOGGER } from './logging';
 
 dotenv.config({ path: `${process.cwd()}/dev.env` });
 
-const { port, mongoURI, env } = config;
+const { port, mongoURI, env } = process.env;
 
 if (!mongoURI || !port) {
 	LOGGER.error('Please make sure that you have a valid mongoURI and port');
