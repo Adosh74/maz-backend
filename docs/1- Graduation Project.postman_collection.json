@@ -77,14 +77,11 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3001/api/v1/users",
-							"protocol": "http",
+							"raw": "{{url}}api/v1/users",
 							"host": [
-								"localhost"
+								"{{url}}api"
 							],
-							"port": "3001",
 							"path": [
-								"api",
 								"v1",
 								"users"
 							]
@@ -257,6 +254,151 @@
 					"response": []
 				}
 			]
+		},
+		{
+			"name": "properties",
+			"item": [
+				{
+					"name": "get all properties",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}api/v1/properties",
+							"host": [
+								"{{url}}api"
+							],
+							"path": [
+								"v1",
+								"properties"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create property",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"first Property\",\r\n    \"description\": \"description for first Property\",\r\n    \"price\": 50000,\r\n    \"address\": \"address for first Property\",\r\n    \"images\": [\"default image\"],\r\n    \"contract\": \"defualt contract\",\r\n    \"location\": {\r\n        \"description\": \"Miami, USA\",\r\n        \"type\": \"Point\",\r\n        \"coordinates\": [-80.185942, 25.774772],\r\n        \"address\": \"301 Biscayne Blvd, Miami, FL 33132, USA\"\r\n    } \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}api/v1/properties",
+							"host": [
+								"{{url}}api"
+							],
+							"path": [
+								"v1",
+								"properties"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get one property",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}api/v1/properties/65d35055f1d0163220ea158b",
+							"host": [
+								"{{url}}api"
+							],
+							"path": [
+								"v1",
+								"properties",
+								"65d35055f1d0163220ea158b"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "user favorite",
+			"item": [
+				{
+					"name": "get all user favorites",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}api/v1/favorites/",
+							"host": [
+								"{{url}}api"
+							],
+							"path": [
+								"v1",
+								"favorites",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create favorites",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{url}}api/v1/favorites/65d35055f1d0163220ea158b",
+							"host": [
+								"{{url}}api"
+							],
+							"path": [
+								"v1",
+								"favorites",
+								"65d35055f1d0163220ea158b"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete user favorites",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}api/v1/favorites/65e38bd66f3bad169c6ea2d2",
+							"host": [
+								"{{url}}api"
+							],
+							"path": [
+								"v1",
+								"favorites",
+								"65e38bd66f3bad169c6ea2d2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "health check",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}healthz",
+					"host": [
+						"{{url}}healthz"
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }
