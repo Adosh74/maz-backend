@@ -2,8 +2,8 @@
 // import ejs from 'ejs';
 import { NextFunction, Request, Response } from 'express';
 import jwt, { JwtPayload } from 'jsonwebtoken';
+import { LOGGER } from '../logging';
 // import path from 'path';
-import config from '../config/keys.config';
 import User, { IUserSchema } from '../models/user.model';
 import AppError from '../utils/AppError.util';
 import catchAsync from '../utils/catchAsync.util';
@@ -11,10 +11,15 @@ import catchAsync from '../utils/catchAsync.util';
 // import sendEmail from '../utils/mail';
 
 // *** Sign JWT token
-const signToken = (id: string) =>
-	jwt.sign({ id }, config.jwtSecret, {
-		expiresIn: config.jwtExpiresIn,
+const signToken = (id: string) => {
+	if (!process.env.JWT_SECRET || !process.env.JWT_EXPIRES_IN) {
+		LOGGER.error('JWT_SECRET or JWT_EXPIRES_IN not found');
+		process.exit(1);
+	}
+	return jwt.sign({ id }, process.env.JWT_SECRET, {
+		expiresIn: process.env.JWT_EXPIRES_IN,
 	});
+};
 
 // *** Create and send token
 const createSendToken = (user: IUserSchema, statusCode: number, res: Response) => {
@@ -22,8 +27,14 @@ const createSendToken = (user: IUserSchema, statusCode: number, res: Response) =
 	const token = signToken(user._id);
 
 	// +[2] Set cookie options
+	if (!process.env.JWT_COOKIE_EXPIRES_IN) {
+		LOGGER.error('JWT_COOKIE_EXPIRES_IN not found');
+		process.exit(1);
+	}
 	const cookieOptions = {
-		expires: new Date(Date.now() + config.jwtCookieExpiresIn * 24 * 60 * 60 * 1000),
+		expires: new Date(
+			Date.now() + parseInt(process.env.JWT_COOKIE_EXPIRES_IN) * 24 * 60 * 60 * 1000
+		),
 		httpOnly: true,
 	} as { expires: Date; httpOnly: boolean; secure?: boolean };
 
@@ -146,7 +157,7 @@ export const protect = catchAsync(
 
 		const decoded: any = (await promisify(jwt.verify)(
 			token,
-			config.jwtSecret
+			process.env.JWT_SECRET
 		)) as JwtPayload;
 
 		// +[4] Check if user still exists

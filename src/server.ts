@@ -1,22 +1,19 @@
 import dotenv from 'dotenv';
 import mongoose from 'mongoose';
 import { app as server } from './app';
-import config from './config/keys.config';
 import { LOGGER } from './logging';
 
-dotenv.config({ path: `${process.cwd()}/dev.env` });
+dotenv.config({ path: `${process.cwd()}/.env` });
 
-console.log(config);
+const { PORT, MONGO_URI, env } = process.env;
 
-const { port, mongoURI, env } = config;
-
-if (!mongoURI || !port) {
+if (!MONGO_URI || !PORT) {
 	LOGGER.error('Please make sure that you have a valid mongoURI and port');
 	process.exit(1);
 }
 
 mongoose
-	.connect(mongoURI || '', {
+	.connect(MONGO_URI || '', {
 		useNewUrlParser: true,
 		useUnifiedTopology: true,
 		useCreateIndex: true,
@@ -24,8 +21,8 @@ mongoose
 	})
 	.then((data) => {
 		LOGGER.info(`Connected to MongoDB ${data.connection.name} database`);
-		server.listen(port, () =>
-			LOGGER.info(`Listening on port ${port} in ${env} environment`)
+		server.listen(PORT, () =>
+			LOGGER.info(`Listening on port ${PORT} in ${env} environment`)
 		);
 	})
 	.catch((err) => {

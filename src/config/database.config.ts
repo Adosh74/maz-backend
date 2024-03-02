@@ -1,12 +1,11 @@
 import mongoose from 'mongoose';
 import { LOGGER } from '../logging';
 import AppError from '../utils/AppError.util';
-import config from './keys.config';
 
 const connectDB = () => {
-	if (!config.mongoURI) return new AppError('MongoURI not found', 500);
+	if (!process.env.MONGO_URI) return new AppError('MongoURI not found', 500);
 	mongoose
-		.connect(config.mongoURI, {
+		.connect(process.env.MONGO_URI, {
 			useNewUrlParser: true,
 			useUnifiedTopology: true,
 			useCreateIndex: true,

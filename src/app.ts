@@ -2,8 +2,8 @@ import cookieParser from 'cookie-parser';
 import cors from 'cors';
 import express from 'express';
 import morgan from 'morgan';
-import config from './config/keys.config';
 import globalErrorHandler from './controllers/error.controller';
+import { LOGGER } from './logging';
 import routes from './routes/index.route';
 import AppError from './utils/AppError.util';
 
@@ -35,7 +35,16 @@ app.use((req, res, next) => {
 app.options('*', cors());
 
 // development logging
-config.env === 'development' ? app.use(morgan('dev')) : null;
+process.env.NODE_ENV === 'development' ? app.use(morgan('dev')) : null;
+
+// logging middleware for production
+app.use((req, res, next) => {
+	(req as any).requestTime = new Date().toISOString();
+	LOGGER.info(
+		`${(req as any).requestTime} - ${req.method} - ${req.originalUrl} - ${req.ip}`
+	);
+	next();
+});
 
 // *** routes *** //
 // monitoring route

@@ -1,7 +1,6 @@
 import ejs from 'ejs';
 import nodemailer, { Transporter } from 'nodemailer';
 import path from 'path';
-import config from '../config/keys.config';
 
 interface IEmailOptions {
 	email: string;
@@ -12,13 +11,11 @@ interface IEmailOptions {
 
 const sendMail = async (options: IEmailOptions): Promise<void> => {
 	const transporter: Transporter = nodemailer.createTransport({
-		host: `${config.smtpHost}`,
-		port: config.smtpPort,
 		pool: true,
-		service: `${config.smtpService}`,
+		service: `${process.env.SMTP_SERVICE}`,
 		auth: {
-			user: `${config.smtpUser}`,
-			pass: `${config.smtpPass}`,
+			user: `${process.env.SMTP_USERNAME}`,
+			pass: `${process.env.SMTP_PASSWORD}`,
 		},
 	});
 

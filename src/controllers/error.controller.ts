@@ -1,4 +1,4 @@
-import config from '../config/keys.config';
+import { LOGGER } from '../logging';
 import AppError from '../utils/AppError.util';
 
 const handleCastErrorDB = (err: any) => {
@@ -42,7 +42,7 @@ const sendErrorProd = (err: any, req: any, res: any) => {
 	}
 	// *** Programming or other unknown error: don't leak error details
 	// 1) Log error
-	console.error('ERROR 💥', err);
+	LOGGER.error('ERROR 💥', err);
 	// 2) Send generic message
 	return res.status(500).json({
 		status: 'error',
@@ -54,8 +54,8 @@ export default (err: any, req: any, res: any, next: any) => {
 	err.statusCode = err.statusCode || 500;
 	err.status = err.status || 'error';
 
-	if (config.env === 'development') sendErrorDev(err, res);
-	else if (config.env === 'production') {
+	if (process.env.NODE_ENV === 'development') sendErrorDev(err, res);
+	else if (process.env.NODE_ENV === 'production') {
 		let error = { ...err };
 		// *** production error handling
 		error.message = err.message;
