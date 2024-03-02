@@ -1,5 +1,5 @@
-import colors from 'colors';
 import mongoose from 'mongoose';
+import { LOGGER } from '../logging';
 import AppError from '../utils/AppError.util';
 import config from './keys.config';
 
@@ -13,9 +13,9 @@ const connectDB = () => {
 			useFindAndModify: false,
 		})
 		.then((data) =>
-			console.log(colors.bgMagenta(`${data.connection.name} 'connected to MongoDB`))
+			LOGGER.info(`Connected to MongoDB ${data.connection.name} database`)
 		)
-		.catch((err) => console.log(err));
+		.catch((err) => LOGGER.error(err));
 };
 
 export default connectDB;

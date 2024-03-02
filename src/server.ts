@@ -1,28 +1,32 @@
-import colors from 'colors';
 import dotenv from 'dotenv';
 import mongoose from 'mongoose';
-import { app } from './app';
-// import connectDB from './config/database.config';
+import { app as server } from './app';
 import config from './config/keys.config';
-import AppError from './utils/AppError.util';
+import { LOGGER } from './logging';
 
 dotenv.config({ path: `${process.cwd()}/dev.env` });
 
-// connectDB();
+const { port, mongoURI, env } = config;
 
-if (!config.mongoURI) new AppError('MongoURI not found', 500);
+if (!mongoURI || !port) {
+	LOGGER.error('Please make sure that you have a valid mongoURI and port');
+	process.exit(1);
+}
+
 mongoose
-	.connect(process.env.MONGO_URI || '', {
+	.connect(mongoURI || '', {
 		useNewUrlParser: true,
 		useUnifiedTopology: true,
 		useCreateIndex: true,
 		useFindAndModify: false,
 	})
 	.then((data) => {
-		console.log(colors.bgMagenta(`${data.connection.name} 'connected to MongoDB`));
-
-		app.listen(3001, () => {
-			console.log(colors.bgGreen(`Server running on port ${config.port}`));
-		});
+		LOGGER.info(`Connected to MongoDB ${data.connection.name} database`);
+		server.listen(port, () =>
+			LOGGER.info(`Listening on port ${port} in ${env} environment`)
+		);
 	})
-	.catch((err) => console.log(err));
+	.catch((err) => {
+		LOGGER.error(err);
+		process.exit(1);
+	});
