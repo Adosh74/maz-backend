@@ -41,7 +41,9 @@ process.env.NODE_ENV === 'development' ? app.use(morgan('dev')) : null;
 app.use((req, res, next) => {
 	(req as any).requestTime = new Date().toISOString();
 	LOGGER.info(
-		`${(req as any).requestTime} - ${req.method} - ${req.originalUrl} - ${req.ip}`
+		`${(req as any).requestTime} - ${req.method} - ${req.originalUrl} - ${
+			req.ip || req.socket.remoteAddress
+		} - ${req.headers['user-agent']}`
 	);
 	next();
 });
