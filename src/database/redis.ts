@@ -12,7 +12,7 @@ if (!REDIS_URL) {
 }
 
 // *** Redis Connection
-const client = new Redis(REDIS_URL);
+export const client = new Redis(REDIS_URL);
 
 client.on('connect', () => {
 	LOGGER.info('Connected to Redis');
