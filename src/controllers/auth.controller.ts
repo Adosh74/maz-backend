@@ -11,12 +11,12 @@ import catchAsync from '../utils/catchAsync.util';
 // import sendEmail from '../utils/mail';
 
 // *** Sign JWT token
-const signToken = (id: string) => {
+const signToken = (id: string, role: string) => {
 	if (!process.env.JWT_SECRET || !process.env.JWT_EXPIRES_IN) {
 		LOGGER.error('JWT_SECRET or JWT_EXPIRES_IN not found');
 		process.exit(1);
 	}
-	return jwt.sign({ id }, process.env.JWT_SECRET, {
+	return jwt.sign({ id, role }, process.env.JWT_SECRET, {
 		expiresIn: process.env.JWT_EXPIRES_IN,
 	});
 };
@@ -24,7 +24,7 @@ const signToken = (id: string) => {
 // *** Create and send token
 const createSendToken = (user: IUserSchema, statusCode: number, res: Response) => {
 	// +[1] Create JWT token
-	const token = signToken(user._id);
+	const token = signToken(user._id, user.role);
 
 	// +[2] Set cookie options
 	if (!process.env.JWT_COOKIE_EXPIRES_IN) {
