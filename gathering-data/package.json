@@ -1,0 +1,13 @@
+{
+  "name": "gathering-data",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Mohamed Shebl",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.12",
+    "request": "^2.88.2",
+    "request-promise": "^4.2.6"
+  }
+}
