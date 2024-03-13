@@ -1,0 +1,182 @@
+[
+    {
+        "type": "{\"@context\":\"https://schema.org\",\"@type\":\"Apartment\",\"name\":\"Apartment for sale on Suez Road with only 5% down payment and 8 year installments\",\"url\":\"https://www.bayut.eg/en/property/details-500604671.html\",\"geo\":{\"@type\":\"GeoCoordinates\",\"latitude\":30.08435,\"longitude\":31.5414973},\"floorSize\":{\"@type\":\"QuantitativeValue\",\"value\":\"172\",\"unitText\":\"SQM\"},\"numberOfRooms\":{\"@type\":\"QuantitativeValue\",\"name\":\"Bedroom(s)\",\"value\":\"3\"},\"numberOfBathroomsTotal\":\"3\",\"image\":\"https://bayut-eg-production.s3.amazonaws.com/thumbnails/15869078-400x300.jpeg\",\"address\":{\"@type\":\"PostalAddress\",\"addressCountry\":\"Egypt\",\"addressRegion\":\"Cairo\",\"addressLocality\":\"New Cairo\"}}",
+        "title": "Apartment for sale on Suez Road with only 5% down payment and 8 year installments",
+        "price": "EGP7,369,000ApartmentApartment3333Area:172 Sq. M.Area:172 Sq. M.172 Sq. M. Call  Email ",
+        "location": "",
+        "link": "/en/property/details-500604671.html"
+    },
+    {
+        "type": "{\"@context\":\"https://schema.org\",\"@type\":\"Residence\",\"name\":\"Penthouse next to the American University in 90 Avenue Compound, with installments over 6 years\",\"url\":\"https://www.bayut.eg/en/property/details-500604669.html\",\"geo\":{\"@type\":\"GeoCoordinates\",\"latitude\":30.0246926,\"longitude\":31.4940262},\"floorSize\":{\"@type\":\"QuantitativeValue\",\"value\":\"173\",\"unitText\":\"SQM\"},\"numberOfRooms\":{\"@type\":\"QuantitativeValue\",\"name\":\"Bedroom(s)\",\"value\":\"3\"},\"numberOfBathroomsTotal\":\"3\",\"image\":\"https://bayut-eg-production.s3.amazonaws.com/thumbnails/15869060-400x300.jpeg\",\"address\":{\"@type\":\"PostalAddress\",\"addressCountry\":\"Egypt\",\"addressRegion\":\"Cairo\",\"addressLocality\":\"New Cairo\"}}",
+        "title": "Penthouse next to the American University in 90 Avenue Compound, with installments over 6 years",
+        "price": "EGP18,701,000PenthousePenthouse3333Area:173 Sq. M.Area:173 Sq. M.173 Sq. M. Call  Email ",
+        "location": "",
+        "link": "/en/property/details-500604669.html"
+    },
+    {
+        "type": "{\"@context\":\"https://schema.org\",\"@type\":\"Apartment\",\"name\":\"Apartment in a prime location ,Ready to move , in the New Capital\",\"url\":\"https://www.bayut.eg/en/property/details-500604667.html\",\"geo\":{\"@type\":\"GeoCoordinates\",\"latitude\":29.9437103,\"longitude\":31.7072124},\"floorSize\":{\"@type\":\"QuantitativeValue\",\"value\":\"125\",\"unitText\":\"SQM\"},\"numberOfRooms\":{\"@type\":\"QuantitativeValue\",\"name\":\"Bedroom(s)\",\"value\":\"2\"},\"numberOfBathroomsTotal\":\"2\",\"image\":\"https://bayut-eg-production.s3.amazonaws.com/thumbnails/15869049-400x300.jpeg\",\"address\":{\"@type\":\"PostalAddress\",\"addressCountry\":\"Egypt\",\"addressRegion\":\"Cairo\",\"addressLocality\":\"New Capital City\"}}",
+        "title": "Apartment in a prime location ,Ready to move , in the New Capital",
+        "price": "EGP6,250,000ApartmentApartment2222Area:125 Sq. M.Area:125 Sq. M.125 Sq. M. Call  Email ",
+        "location": "",
+        "link": "/en/property/details-500604667.html"
+    },
+    {
+        "type": "{\"@context\":\"https://schema.org\",\"@type\":\"Residence\",\"name\":\"Duplex in ION in New Capital Compound with 10% down payment\",\"url\":\"https://www.bayut.eg/en/property/details-500604663.html\",\"geo\":{\"@type\":\"GeoCoordinates\",\"latitude\":30.02834,\"longitude\":31.83725},\"floorSize\":{\"@type\":\"QuantitativeValue\",\"value\":\"256\",\"unitText\":\"SQM\"},\"numberOfRooms\":{\"@type\":\"QuantitativeValue\",\"name\":\"Bedroom(s)\",\"value\":\"4\"},\"numberOfBathroomsTotal\":\"4\",\"image\":\"https://bayut-eg-production.s3.amazonaws.com/thumbnails/15869017-400x300.jpeg\",\"address\":{\"@type\":\"PostalAddress\",\"addressCountry\":\"Egypt\",\"addressRegion\":\"Cairo\",\"addressLocality\":\"New Capital City\"}}",
+        "title": "Duplex in ION in New Capital Compound with 10% down payment",
+        "price": "EGP8,550,000DuplexDuplex4444Area:256 Sq. M.Area:256 Sq. M.256 Sq. M. Call  Email ",
+        "location": "",
+        "link": "/en/property/details-500604663.html"
+    },
+    {
+        "type": "{\"@context\":\"https://schema.org\",\"@type\":\"Residence\",\"name\":\"Chalet With Garden  for sale in Solare - view on the sea and lagoon - Misr Italia Real Estate Development Company -5% down payment - fully finished\",\"url\":\"https://www.bayut.eg/en/property/details-500604581.html\",\"geo\":{\"@type\":\"GeoCoordinates\",\"latitude\":31.085864,\"longitude\":28.047712},\"floorSize\":{\"@type\":\"QuantitativeValue\",\"value\":\"110\",\"unitText\":\"SQM\"},\"numberOfRooms\":{\"@type\":\"QuantitativeValue\",\"name\":\"Bedroom(s)\",\"value\":\"2\"},\"numberOfBathroomsTotal\":\"2\",\"image\":\"https://bayut-eg-production.s3.amazonaws.com/thumbnails/15868658-400x300.jpeg\",\"address\":{\"@type\":\"PostalAddress\",\"addressCountry\":\"Egypt\",\"addressRegion\":\"Matruh\",\"addressLocality\":\"North Coast\"}}",
+        "title": "Chalet With Garden  for sale in Solare - view on the sea and lagoon - Misr Italia Real Estate Development Company -5% down payment - fully finished",
+        "price": "EGP10,700,000ChaletChalet2222Area:110 Sq. M.Area:110 Sq. M.110 Sq. M. Call  Email ",
+        "location": "",
+        "link": "/en/property/details-500604581.html"
+    },
+    {
+        "type": "{\"@context\":\"https://schema.org\",\"@type\":\"Apartment\",\"name\":\"Apartment for sale in the New Administrative Capital - New Cairo - Al Maqsad Compound (R3) - 5% - 10% down payment\",\"url\":\"https://www.bayut.eg/en/property/details-500604525.html\",\"geo\":{\"@type\":\"GeoCoordinates\",\"latitude\":30.0395901,\"longitude\":31.6985965},\"floorSize\":{\"@type\":\"QuantitativeValue\",\"value\":\"158\",\"unitText\":\"SQM\"},\"numberOfRooms\":{\"@type\":\"QuantitativeValue\",\"name\":\"Bedroom(s)\",\"value\":\"2\"},\"numberOfBathroomsTotal\":\"3\",\"image\":\"https://bayut-eg-production.s3.amazonaws.com/thumbnails/15868375-400x300.jpeg\",\"address\":{\"@type\":\"PostalAddress\",\"addressCountry\":\"Egypt\",\"addressRegion\":\"Cairo\",\"addressLocality\":\"New Capital City\"}}",
+        "title": "Apartment for sale in the New Administrative Capital - New Cairo - Al Maqsad Compound (R3) - 5% - 10% down payment",
+        "price": "EGP3,954,000ApartmentApartment2233Area:158 Sq. M.Area:158 Sq. M.158 Sq. M. Call  Email ",
+        "location": "",
+        "link": "/en/property/details-500604525.html"
+    },
+    {
+        "type": "{\"@context\":\"https://schema.org\",\"@type\":\"Apartment\",\"name\":\"Apartment for sale in the New Administrative Capital - New Cairo - Al Maqsad Compound (R3) - 5% - 10% down payment\",\"url\":\"https://www.bayut.eg/en/property/details-500604520.html\",\"geo\":{\"@type\":\"GeoCoordinates\",\"latitude\":30.0395901,\"longitude\":31.6985965},\"floorSize\":{\"@type\":\"QuantitativeValue\",\"value\":\"157\",\"unitText\":\"SQM\"},\"numberOfRooms\":{\"@type\":\"QuantitativeValue\",\"name\":\"Bedroom(s)\",\"value\":\"3\"},\"numberOfBathroomsTotal\":\"4\",\"image\":\"https://bayut-eg-production.s3.amazonaws.com/thumbnails/15868329-400x300.jpeg\",\"address\":{\"@type\":\"PostalAddress\",\"addressCountry\":\"Egypt\",\"addressRegion\":\"Cairo\",\"addressLocality\":\"New Capital City\"}}",
+        "title": "Apartment for sale in the New Administrative Capital - New Cairo - Al Maqsad Compound (R3) - 5% - 10% down payment",
+        "price": "EGP4,627,000ApartmentApartment3344Area:157 Sq. M.Area:157 Sq. M.157 Sq. M. Call  Email ",
+        "location": "",
+        "link": "/en/property/details-500604520.html"
+    },
+    {
+        "type": "{\"@context\":\"https://schema.org\",\"@type\":\"Residence\",\"name\":\"Receive now a fully finished chalet of 150 meters, first row on the sea, the best beach in La Vista, Ras El Hekma, North Coast\",\"url\":\"https://www.bayut.eg/en/property/details-500604497.html\",\"geo\":{\"@type\":\"GeoCoordinates\",\"latitude\":31.0682429,\"longitude\":28.3598287},\"floorSize\":{\"@type\":\"QuantitativeValue\",\"value\":\"150\",\"unitText\":\"SQM\"},\"numberOfRooms\":{\"@type\":\"QuantitativeValue\",\"name\":\"Bedroom(s)\",\"value\":\"3\"},\"numberOfBathroomsTotal\":\"3\",\"image\":\"https://bayut-eg-production.s3.amazonaws.com/thumbnails/15868216-400x300.jpeg\",\"address\":{\"@type\":\"PostalAddress\",\"addressCountry\":\"Egypt\",\"addressRegion\":\"Matruh\",\"addressLocality\":\"North Coast\"}}",
+        "title": "Receive now a fully finished chalet of 150 meters, first row on the sea, the best beach in La Vista, Ras El Hekma, North Coast",
+        "price": "EGP15,240,000ChaletChalet3333Area:150 Sq. M.Area:150 Sq. M.150 Sq. M. Call  Email ",
+        "location": "",
+        "link": "/en/property/details-500604497.html"
+    },
+    {
+        "type": "{\"@context\":\"https://schema.org\",\"@type\":\"Residence\",\"name\":\"At a snapshot price + 50% discount / townhouse for sale in installments in New Sheikh Zayed\",\"url\":\"https://www.bayut.eg/en/property/details-500604371.html\",\"geo\":{\"@type\":\"GeoCoordinates\",\"latitude\":30.0350735,\"longitude\":30.982366},\"floorSize\":{\"@type\":\"QuantitativeValue\",\"value\":\"320\",\"unitText\":\"SQM\"},\"numberOfRooms\":{\"@type\":\"QuantitativeValue\",\"name\":\"Bedroom(s)\",\"value\":\"5\"},\"numberOfBathroomsTotal\":\"3\",\"image\":\"https://bayut-eg-production.s3.amazonaws.com/thumbnails/15867446-400x300.jpeg\",\"address\":{\"@type\":\"PostalAddress\",\"addressCountry\":\"Egypt\",\"addressRegion\":\"Giza\",\"addressLocality\":\"Sheikh Zayed\"}}",
+        "title": "At a snapshot price + 50% discount / townhouse for sale in installments in New Sheikh Zayed",
+        "price": "EGP1,500,000TownhouseTownhouse5533Area:320 Sq. M.Area:320 Sq. M.320 Sq. M. Call  Email ",
+        "location": "",
+        "link": "/en/property/details-500604371.html"
+    },
+    {
+        "type": "",
+        "title": "",
+        "price": "",
+        "location": ""
+    },
+    {
+        "type": "{\"@context\":\"https://schema.org\",\"@type\":\"Residence\",\"name\":\"Chalet for sale in Solare North Coast - view on the sea and lagoon - Misr Italia Real Estate Development Company -5% down payment - fully finished\",\"url\":\"https://www.bayut.eg/en/property/details-500604578.html\",\"geo\":{\"@type\":\"GeoCoordinates\",\"latitude\":31.085864,\"longitude\":28.047712},\"floorSize\":{\"@type\":\"QuantitativeValue\",\"value\":\"120\",\"unitText\":\"SQM\"},\"numberOfRooms\":{\"@type\":\"QuantitativeValue\",\"name\":\"Bedroom(s)\",\"value\":\"2\"},\"numberOfBathroomsTotal\":\"2\",\"image\":\"https://bayut-eg-production.s3.amazonaws.com/thumbnails/15868601-400x300.jpeg\",\"address\":{\"@type\":\"PostalAddress\",\"addressCountry\":\"Egypt\",\"addressRegion\":\"Matruh\",\"addressLocality\":\"North Coast\"}}",
+        "title": "Chalet for sale in Solare North Coast - view on the sea and lagoon - Misr Italia Real Estate Development Company -5% down payment - fully finished",
+        "price": "EGP10,100,000ChaletChalet2222Area:120 Sq. M.Area:120 Sq. M.120 Sq. M. Call  Email ",
+        "location": "",
+        "link": "/en/property/details-500604578.html"
+    },
+    {
+        "type": "{\"@context\":\"https://schema.org\",\"@type\":\"Residence\",\"name\":\"Chalet for sale in Solare North Coast - view on the sea and lagoon - Misr Italia Real Estate Development Company -5% down payment - fully finished\",\"url\":\"https://www.bayut.eg/en/property/details-500604572.html\",\"geo\":{\"@type\":\"GeoCoordinates\",\"latitude\":31.085864,\"longitude\":28.047712},\"floorSize\":{\"@type\":\"QuantitativeValue\",\"value\":\"114\",\"unitText\":\"SQM\"},\"numberOfRooms\":{\"@type\":\"QuantitativeValue\",\"name\":\"Bedroom(s)\",\"value\":\"2\"},\"numberOfBathroomsTotal\":\"2\",\"image\":\"https://bayut-eg-production.s3.amazonaws.com/thumbnails/15868524-400x300.jpeg\",\"address\":{\"@type\":\"PostalAddress\",\"addressCountry\":\"Egypt\",\"addressRegion\":\"Matruh\",\"addressLocality\":\"North Coast\"}}",
+        "title": "Chalet for sale in Solare North Coast - view on the sea and lagoon - Misr Italia Real Estate Development Company -5% down payment - fully finished",
+        "price": "EGP9,700,000ChaletChalet2222Area:114 Sq. M.Area:114 Sq. M.114 Sq. M. Call  Email ",
+        "location": "",
+        "link": "/en/property/details-500604572.html"
+    },
+    {
+        "type": "{\"@context\":\"https://schema.org\",\"@type\":\"Apartment\",\"name\":\"Chalet for sale in Solare North Coast - view on the sea and lagoon - Misr Italia Real Estate Development Company -5% down payment - fully finished\",\"url\":\"https://www.bayut.eg/en/property/details-500604562.html\",\"geo\":{\"@type\":\"GeoCoordinates\",\"latitude\":31.085864,\"longitude\":28.047712},\"floorSize\":{\"@type\":\"QuantitativeValue\",\"value\":\"115\",\"unitText\":\"SQM\"},\"numberOfRooms\":{\"@type\":\"QuantitativeValue\",\"name\":\"Bedroom(s)\",\"value\":\"2\"},\"numberOfBathroomsTotal\":\"2\",\"image\":\"https://bayut-eg-production.s3.amazonaws.com/thumbnails/15868477-400x300.jpeg\",\"address\":{\"@type\":\"PostalAddress\",\"addressCountry\":\"Egypt\",\"addressRegion\":\"Matruh\",\"addressLocality\":\"North Coast\"}}",
+        "title": "Chalet for sale in Solare North Coast - view on the sea and lagoon - Misr Italia Real Estate Development Company -5% down payment - fully finished",
+        "price": "EGP9,700,000ApartmentApartment2222Area:115 Sq. M.Area:115 Sq. M.115 Sq. M. Call  Email ",
+        "location": "",
+        "link": "/en/property/details-500604562.html"
+    },
+    {
+        "type": "{\"@context\":\"https://schema.org\",\"@type\":\"Residence\",\"name\":\"Townhouse, immediate delivery in the heart of Sheikh Zayed, installments up to 6 years\",\"url\":\"https://www.bayut.eg/en/property/details-500604324.html\",\"geo\":{\"@type\":\"GeoCoordinates\",\"latitude\":30.0445728,\"longitude\":31.0243959},\"floorSize\":{\"@type\":\"QuantitativeValue\",\"value\":\"230\",\"unitText\":\"SQM\"},\"numberOfRooms\":{\"@type\":\"QuantitativeValue\",\"name\":\"Bedroom(s)\",\"value\":\"3\"},\"numberOfBathroomsTotal\":\"4\",\"image\":\"https://bayut-eg-production.s3.amazonaws.com/thumbnails/15867233-400x300.jpeg\",\"address\":{\"@type\":\"PostalAddress\",\"addressCountry\":\"Egypt\",\"addressRegion\":\"Giza\",\"addressLocality\":\"Sheikh Zayed\"}}",
+        "title": "Townhouse, immediate delivery in the heart of Sheikh Zayed, installments up to 6 years",
+        "price": "EGP15,000,000TownhouseTownhouse3344Area:230 Sq. M.Area:230 Sq. M.230 Sq. M. Call  Email ",
+        "location": "",
+        "link": "/en/property/details-500604324.html"
+    },
+    {
+        "type": "{\"@context\":\"https://schema.org\",\"@type\":\"Apartment\",\"name\":\"أفضل استثمار الان شقة للبيع في كمبوند هايد بارك بمقدم 5% وقسط على8 سنوات\",\"url\":\"https://www.bayut.eg/en/property/details-500604519.html\",\"geo\":{\"@type\":\"GeoCoordinates\",\"latitude\":29.9842656,\"longitude\":31.540594},\"floorSize\":{\"@type\":\"QuantitativeValue\",\"value\":\"82\",\"unitText\":\"SQM\"},\"numberOfRooms\":{\"@type\":\"QuantitativeValue\",\"name\":\"Bedroom(s)\",\"value\":\"1\"},\"numberOfBathroomsTotal\":\"1\",\"image\":\"https://bayut-eg-production.s3.amazonaws.com/thumbnails/15868318-400x300.jpeg\",\"address\":{\"@type\":\"PostalAddress\",\"addressCountry\":\"Egypt\",\"addressRegion\":\"Cairo\",\"addressLocality\":\"New Cairo\"}}",
+        "title": "أفضل استثمار الان شقة للبيع في كمبوند هايد بارك بمقدم 5% وقسط على8 سنوات",
+        "price": "EGP6,945,000ApartmentApartment1111Area:82 Sq. M.Area:82 Sq. M.82 Sq. M. Call  Email ",
+        "location": "",
+        "link": "/en/property/details-500604519.html"
+    },
+    {
+        "type": "{\"@context\":\"https://schema.org\",\"@type\":\"Residence\",\"name\":\"Receive a fully finished chalet in Ras El Hekma in installments up to 9 years\",\"url\":\"https://www.bayut.eg/en/property/details-500604251.html\",\"geo\":{\"@type\":\"GeoCoordinates\",\"latitude\":31.1903125,\"longitude\":27.5931875},\"floorSize\":{\"@type\":\"QuantitativeValue\",\"value\":\"200\",\"unitText\":\"SQM\"},\"numberOfRooms\":{\"@type\":\"QuantitativeValue\",\"name\":\"Bedroom(s)\",\"value\":\"3\"},\"numberOfBathroomsTotal\":\"4\",\"image\":\"https://bayut-eg-production.s3.amazonaws.com/thumbnails/15867006-400x300.jpeg\",\"address\":{\"@type\":\"PostalAddress\",\"addressCountry\":\"Egypt\",\"addressRegion\":\"Matruh\",\"addressLocality\":\"North Coast\"}}",
+        "title": "Receive a fully finished chalet in Ras El Hekma in installments up to 9 years",
+        "price": "EGP15,000,000ChaletChalet3344Area:200 Sq. M.Area:200 Sq. M.200 Sq. M. Call  Email ",
+        "location": "",
+        "link": "/en/property/details-500604251.html"
+    },
+    {
+        "type": "{\"@context\":\"https://schema.org\",\"@type\":\"Residence\",\"name\":\"Solare North Coast شالية للبيع بسعر مميز متطشب كامل وبفيو كامل للبحر بارقي قرية سولاري الساحل الشمالي\",\"url\":\"https://www.bayut.eg/en/property/details-500604247.html\",\"geo\":{\"@type\":\"GeoCoordinates\",\"latitude\":31.085864,\"longitude\":28.047712},\"floorSize\":{\"@type\":\"QuantitativeValue\",\"value\":\"114\",\"unitText\":\"SQM\"},\"numberOfRooms\":{\"@type\":\"QuantitativeValue\",\"name\":\"Bedroom(s)\",\"value\":\"2\"},\"numberOfBathroomsTotal\":\"2\",\"image\":\"https://bayut-eg-production.s3.amazonaws.com/thumbnails/15866967-400x300.jpeg\",\"address\":{\"@type\":\"PostalAddress\",\"addressCountry\":\"Egypt\",\"addressRegion\":\"Matruh\",\"addressLocality\":\"North Coast\"}}",
+        "title": "Solare North Coast شالية للبيع بسعر مميز متطشب كامل وبفيو كامل للبحر بارقي قرية سولاري الساحل الشمالي",
+        "price": "EGP985,000ChaletChalet2222Area:114 Sq. M.Area:114 Sq. M.114 Sq. M. Call  Email ",
+        "location": "",
+        "link": "/en/property/details-500604247.html"
+    },
+    {
+        "type": "{\"@context\":\"https://schema.org\",\"@type\":\"Apartment\",\"name\":\"Own an apartment in the heart of New Cairo - The Crest | With a 5% down payment and equal installments over 7 years\",\"url\":\"https://www.bayut.eg/en/property/details-500604521.html\",\"geo\":{\"@type\":\"GeoCoordinates\",\"latitude\":29.96511984,\"longitude\":31.54484867},\"floorSize\":{\"@type\":\"QuantitativeValue\",\"value\":\"95\",\"unitText\":\"SQM\"},\"numberOfRooms\":{\"@type\":\"QuantitativeValue\",\"name\":\"Bedroom(s)\",\"value\":\"1\"},\"numberOfBathroomsTotal\":\"1\",\"image\":\"https://bayut-eg-production.s3.amazonaws.com/thumbnails/15868347-400x300.jpeg\",\"address\":{\"@type\":\"PostalAddress\",\"addressCountry\":\"Egypt\",\"addressRegion\":\"Cairo\",\"addressLocality\":\"New Cairo\"}}",
+        "title": "Own an apartment in the heart of New Cairo - The Crest | With a 5% down payment and equal installments over 7 years",
+        "price": "EGP6,300,000ApartmentApartment1111Area:95 Sq. M.Area:95 Sq. M.95 Sq. M. Call  Email ",
+        "location": "",
+        "link": "/en/property/details-500604521.html"
+    },
+    {
+        "type": "{\"@context\":\"https://schema.org\",\"@type\":\"Residence\",\"name\":\"Own a duplex with a garden in the heart of New Cairo - The Crest | With a 5% down payment and equal installments over 7 years\",\"url\":\"https://www.bayut.eg/en/property/details-500604512.html\",\"geo\":{\"@type\":\"GeoCoordinates\",\"latitude\":29.96511984,\"longitude\":31.54484867},\"floorSize\":{\"@type\":\"QuantitativeValue\",\"value\":\"210\",\"unitText\":\"SQM\"},\"numberOfRooms\":{\"@type\":\"QuantitativeValue\",\"name\":\"Bedroom(s)\",\"value\":\"3\"},\"numberOfBathroomsTotal\":\"3\",\"image\":\"https://bayut-eg-production.s3.amazonaws.com/thumbnails/15868304-400x300.jpeg\",\"address\":{\"@type\":\"PostalAddress\",\"addressCountry\":\"Egypt\",\"addressRegion\":\"Cairo\",\"addressLocality\":\"New Cairo\"}}",
+        "title": "Own a duplex with a garden in the heart of New Cairo - The Crest | With a 5% down payment and equal installments over 7 years",
+        "price": "EGP18,200,000DuplexDuplex3333Area:210 Sq. M.Area:210 Sq. M.210 Sq. M. Call  Email ",
+        "location": "",
+        "link": "/en/property/details-500604512.html"
+    },
+    {
+        "type": "",
+        "title": "",
+        "price": "",
+        "location": ""
+    },
+    {
+        "type": "{\"@context\":\"https://schema.org\",\"@type\":\"Residence\",\"name\":\"Own a duplex with a garden in the heart of New Cairo - The Crest | With a 5% down payment and equal installments over 7 years\",\"url\":\"https://www.bayut.eg/en/property/details-500604509.html\",\"geo\":{\"@type\":\"GeoCoordinates\",\"latitude\":29.96511984,\"longitude\":31.54484867},\"floorSize\":{\"@type\":\"QuantitativeValue\",\"value\":\"215\",\"unitText\":\"SQM\"},\"numberOfRooms\":{\"@type\":\"QuantitativeValue\",\"name\":\"Bedroom(s)\",\"value\":\"3\"},\"numberOfBathroomsTotal\":\"3\",\"image\":\"https://bayut-eg-production.s3.amazonaws.com/thumbnails/15868279-400x300.jpeg\",\"address\":{\"@type\":\"PostalAddress\",\"addressCountry\":\"Egypt\",\"addressRegion\":\"Cairo\",\"addressLocality\":\"New Cairo\"}}",
+        "title": "Own a duplex with a garden in the heart of New Cairo - The Crest | With a 5% down payment and equal installments over 7 years",
+        "price": "EGP17,800,000DuplexDuplex3333Area:215 Sq. M.Area:215 Sq. M.215 Sq. M. Call  Email ",
+        "location": "",
+        "link": "/en/property/details-500604509.html"
+    },
+    {
+        "type": "{\"@context\":\"https://schema.org\",\"@type\":\"Apartment\",\"name\":\"Fully Finished Apartment For sale in Zed West Towers Ora in El sheikh Zayed with down payment Prime location\",\"url\":\"https://www.bayut.eg/en/property/details-500604375.html\",\"geo\":{\"@type\":\"GeoCoordinates\",\"latitude\":30.0468424,\"longitude\":30.998248},\"floorSize\":{\"@type\":\"QuantitativeValue\",\"value\":\"185\",\"unitText\":\"SQM\"},\"numberOfRooms\":{\"@type\":\"QuantitativeValue\",\"name\":\"Bedroom(s)\",\"value\":\"3\"},\"numberOfBathroomsTotal\":\"2\",\"image\":\"https://bayut-eg-production.s3.amazonaws.com/thumbnails/15867470-400x300.jpeg\",\"address\":{\"@type\":\"PostalAddress\",\"addressCountry\":\"Egypt\",\"addressRegion\":\"Giza\",\"addressLocality\":\"Sheikh Zayed\"}}",
+        "title": "Fully Finished Apartment For sale in Zed West Towers Ora in El sheikh Zayed with down payment Prime location",
+        "price": "EGP21,400,296ApartmentApartment3322Area:185 Sq. M.Area:185 Sq. M.185 Sq. M. Call  Email ",
+        "location": "",
+        "link": "/en/property/details-500604375.html"
+    },
+    {
+        "type": "{\"@context\":\"https://schema.org\",\"@type\":\"Apartment\",\"name\":\"Apartment For sale Fully Finished in Zed West Towers Ora in El sheikh Zayed with down payment Prime location\",\"url\":\"https://www.bayut.eg/en/property/details-500604354.html\",\"geo\":{\"@type\":\"GeoCoordinates\",\"latitude\":30.0468424,\"longitude\":30.998248},\"floorSize\":{\"@type\":\"QuantitativeValue\",\"value\":\"143\",\"unitText\":\"SQM\"},\"numberOfRooms\":{\"@type\":\"QuantitativeValue\",\"name\":\"Bedroom(s)\",\"value\":\"2\"},\"numberOfBathroomsTotal\":\"2\",\"image\":\"https://bayut-eg-production.s3.amazonaws.com/thumbnails/15867528-400x300.jpeg\",\"address\":{\"@type\":\"PostalAddress\",\"addressCountry\":\"Egypt\",\"addressRegion\":\"Giza\",\"addressLocality\":\"Sheikh Zayed\"}}",
+        "title": "Apartment For sale Fully Finished in Zed West Towers Ora in El sheikh Zayed with down payment Prime location",
+        "price": "EGP10,437,280ApartmentApartment2222Area:143 Sq. M.Area:143 Sq. M.143 Sq. M. Call  Email ",
+        "location": "",
+        "link": "/en/property/details-500604354.html"
+    },
+    {
+        "type": "{\"@context\":\"https://schema.org\",\"@type\":\"Apartment\",\"name\":\"Fully Finished Apartment with down payment and installments For sale in Zed West Towers Ora in Prime location\",\"url\":\"https://www.bayut.eg/en/property/details-500604339.html\",\"geo\":{\"@type\":\"GeoCoordinates\",\"latitude\":30.0468424,\"longitude\":30.998248},\"floorSize\":{\"@type\":\"QuantitativeValue\",\"value\":\"129\",\"unitText\":\"SQM\"},\"numberOfRooms\":{\"@type\":\"QuantitativeValue\",\"name\":\"Bedroom(s)\",\"value\":\"2\"},\"numberOfBathroomsTotal\":\"2\",\"image\":\"https://bayut-eg-production.s3.amazonaws.com/thumbnails/15867298-400x300.jpeg\",\"address\":{\"@type\":\"PostalAddress\",\"addressCountry\":\"Egypt\",\"addressRegion\":\"Giza\",\"addressLocality\":\"Sheikh Zayed\"}}",
+        "title": "Fully Finished Apartment with down payment and installments For sale in Zed West Towers Ora in Prime location",
+        "price": "EGP11,000,000ApartmentApartment2222Area:129 Sq. M.Area:129 Sq. M.129 Sq. M. Call  Email ",
+        "location": "",
+        "link": "/en/property/details-500604339.html"
+    },
+    {
+        "type": "{\"@context\":\"https://schema.org\",\"@type\":\"Apartment\",\"name\":\"Fully Finished Apartment For sale in Zed West Towers Ora in El sheikh Zayed with down payment Prime location\",\"url\":\"https://www.bayut.eg/en/property/details-500604291.html\",\"geo\":{\"@type\":\"GeoCoordinates\",\"latitude\":30.0468424,\"longitude\":30.998248},\"floorSize\":{\"@type\":\"QuantitativeValue\",\"value\":\"142\",\"unitText\":\"SQM\"},\"numberOfRooms\":{\"@type\":\"QuantitativeValue\",\"name\":\"Bedroom(s)\",\"value\":\"2\"},\"numberOfBathroomsTotal\":\"2\",\"image\":\"https://bayut-eg-production.s3.amazonaws.com/thumbnails/15867123-400x300.jpeg\",\"address\":{\"@type\":\"PostalAddress\",\"addressCountry\":\"Egypt\",\"addressRegion\":\"Giza\",\"addressLocality\":\"Sheikh Zayed\"}}",
+        "title": "Fully Finished Apartment For sale in Zed West Towers Ora in El sheikh Zayed with down payment Prime location",
+        "price": "EGP15,841,979ApartmentApartment2222Area:142 Sq. M.Area:142 Sq. M.142 Sq. M. Call  Email ",
+        "location": "",
+        "link": "/en/property/details-500604291.html"
+    },
+    {
+        "type": "{\"@context\":\"https://schema.org\",\"@type\":\"Apartment\",\"name\":\"Apartment Fully Finished For sale in Zed West Towers Ora in El sheikh Zayed with down payment Prime location\",\"url\":\"https://www.bayut.eg/en/property/details-500604439.html\",\"geo\":{\"@type\":\"GeoCoordinates\",\"latitude\":30.0468424,\"longitude\":30.998248},\"floorSize\":{\"@type\":\"QuantitativeValue\",\"value\":\"137\",\"unitText\":\"SQM\"},\"numberOfRooms\":{\"@type\":\"QuantitativeValue\",\"name\":\"Bedroom(s)\",\"value\":\"2\"},\"numberOfBathroomsTotal\":\"2\",\"image\":\"https://bayut-eg-production.s3.amazonaws.com/thumbnails/15867859-400x300.jpeg\",\"address\":{\"@type\":\"PostalAddress\",\"addressCountry\":\"Egypt\",\"addressRegion\":\"Giza\",\"addressLocality\":\"Sheikh Zayed\"}}",
+        "title": "Apartment Fully Finished For sale in Zed West Towers Ora in El sheikh Zayed with down payment Prime location",
+        "price": "EGP10,250,000ApartmentApartment2222Area:137 Sq. M.Area:137 Sq. M.137 Sq. M. Call  Email ",
+        "location": "",
+        "link": "/en/property/details-500604439.html"
+    }
+]
