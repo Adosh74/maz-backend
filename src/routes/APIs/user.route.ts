@@ -15,6 +15,8 @@ routes.route('/updateMyPassword').patch(authController.updatePassword);
 
 // get current user
 routes.route('/me').get(userController.getMe, userController.getOneUser);
+// update current user
+routes.patch('/updateMe', userController.updateMe);
 
 // *** restrict to specific roles (middleware) *** //
 routes.use(authController.restrictTo('admin'));
