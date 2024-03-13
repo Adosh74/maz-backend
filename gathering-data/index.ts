@@ -1,6 +1,6 @@
-const request = require('request');
-const cheerio = require('cheerio');
-const fs = require('fs');
+import cheerio from 'cheerio';
+import fs from 'fs';
+import request from 'request';
 
 const url = 'https://www.bayut.eg/en/egypt/properties-for-sale/';
 
@@ -8,7 +8,7 @@ const url = 'https://www.bayut.eg/en/egypt/properties-for-sale/';
 	request(url, (error, response, html) => {
 		if (!error && response.statusCode == 200) {
 			const $ = cheerio.load(html);
-			const data = [];
+			const data: any = [];
 
 			// $('div[class="bbfbe3d2 be03f78f"]').each((i, el) => {
 			// 	const title = $(el).find('.card__title').text();
