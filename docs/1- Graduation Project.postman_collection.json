@@ -17,7 +17,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\": \"Shebl\"\r\n}",
+							"raw": "{\r\n    \"name\": \"test123\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -25,17 +25,14 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3001/api/v1/users/65b366caefa6532aa455e17d",
-							"protocol": "http",
+							"raw": "{{url}}api/v1/users/65c3d62dc428543924d45aa2",
 							"host": [
-								"localhost"
+								"{{url}}api"
 							],
-							"port": "3001",
 							"path": [
-								"api",
 								"v1",
 								"users",
-								"65b366caefa6532aa455e17d"
+								"65c3d62dc428543924d45aa2"
 							]
 						}
 					},
