@@ -5,6 +5,7 @@ import jwt, { JwtPayload } from 'jsonwebtoken';
 import { LOGGER } from '../logging';
 // import path from 'path';
 import User, { IUserSchema } from '../models/user.model';
+import { welcomeEmail } from '../services/sendEmail.service';
 import AppError from '../utils/AppError.util';
 import catchAsync from '../utils/catchAsync.util';
 
@@ -97,6 +98,8 @@ export const signup = catchAsync(
 		// 	data: { user },
 		// });
 
+		// +[4] Send welcome email
+		welcomeEmail({ to: newUser.email, subject: 'Welcome to the MAZ Realty!' });
 		// +[5] Send token
 		createSendToken(newUser, 201, res);
 	}
