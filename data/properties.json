@@ -1,0 +1,15 @@
+{
+	"name": "Catalyst",
+	"description": "Palm Hills Company is launching its new project, PX Palm Hills, in the Eastern Expansion Area, 6 October, within the Palm Hills project, on a hill 140 meters above the ground.",
+	"price": 11319530,
+	"bedroom": 2,
+	"bathroom": 3,
+	"address": "PX Palm Hills, 6th of October, Giza",
+	"area": 122,
+	"images": [
+		"https://bayut-eg-production.s3.amazonaws.com/thumbnails/15921643-800x600.webp",
+		"https://bayut-eg-production.s3.amazonaws.com/thumbnails/15921648-800x600.webp",
+		"https://bayut-eg-production.s3.amazonaws.com/thumbnails/15921645-800x600.webp",
+		"https://bayut-eg-production.s3.amazonaws.com/thumbnails/15921646-800x600.webp"
+	]
+}
