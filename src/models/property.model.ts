@@ -26,60 +26,78 @@ export interface IPropertySchema extends Document {
 	find: (query: any) => any;
 }
 
-const propertySchema: Schema<IPropertySchema> = new Schema({
-	name: {
-		type: String,
-		required: [true, 'The Property must has a name'],
-		trim: true,
-		maxlength: [255, 'The name must be at least 255 characters'],
-	},
-	description: {
-		type: String,
-		required: [true, 'The Property must has a description'],
-		trim: true,
-	},
-	price: {
-		type: Number,
-		required: [true, 'The Property must has a price'],
-	},
-	owner: {
-		_id: {
-			type: String,
-		},
+export const propertySchema: Schema<IPropertySchema> = new Schema(
+	{
 		name: {
 			type: String,
+			required: [true, 'The Property must has a name'],
+			trim: true,
+			maxlength: [255, 'The name must be at least 255 characters'],
 		},
-		phone: {
+		description: {
 			type: String,
+			required: [true, 'The Property must has a description'],
+			trim: true,
 		},
-		whatsapp: {
+		price: {
+			type: Number,
+			required: [true, 'The Property must has a price'],
+		},
+		owner: {
+			_id: {
+				type: String,
+			},
+			name: {
+				type: String,
+			},
+			phone: {
+				type: String,
+			},
+			email: {
+				type: String,
+			},
+			whatsapp: {
+				type: String,
+			},
+		},
+		address: {
 			type: String,
+			required: [true, 'The Property must has a address'],
 		},
-	},
-	address: {
-		type: String,
-		required: [true, 'The Property must has a address'],
-	},
-	images: [String],
-	contract: {
-		type: String,
-		required: [true, 'You must provide a contract'],
-	},
-	approved: {
-		type: Boolean,
-		default: false,
-	},
-	location: {
-		type: {
+		images: [String],
+		contract: {
 			type: String,
-			default: 'Point',
-			enum: ['Point'],
+			required: [true, 'You must provide a contract'],
 		},
-		coordinates: [Number],
-		address: String,
-		description: String,
+		approved: {
+			type: Boolean,
+			default: false,
+		},
+		location: {
+			type: {
+				type: String,
+				default: 'Point',
+				enum: ['Point'],
+			},
+			coordinates: [Number],
+			address: String,
+			description: String,
+		},
+		bedrooms: {
+			type: Number,
+			default: 0,
+			required: [true, 'The Property must has a number of bedrooms'],
+		},
+		bathrooms: {
+			type: Number,
+			default: 0,
+			required: [true, 'The Property must has a number of bathrooms'],
+		},
 	},
-});
+	{
+		timestamps: true,
+	}
+);
 
 // add indexes improve the performance of the queries
 propertySchema.index({ location: '2dsphere' });
