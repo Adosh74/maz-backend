@@ -6,7 +6,9 @@
 	"scripts": {
 		"start:dev": "ts-node-dev --respawn --transpile-only ./src/server.ts",
 		"build": "tsc",
-		"start": "npm run build && pm2 start --name mazrealty dist/server.js -i 0"
+		"start": "npm run build && pm2 start --name mazrealty dist/server.js -i 0",
+		"import:data": "ts-node ./src/database/importData.ts --import",
+		"delete:data": "ts-node ./src/database/importData.ts --delete"
 	},
 	"repository": {
 		"type": "git",
