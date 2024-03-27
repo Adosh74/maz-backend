@@ -95,6 +95,15 @@ export const propertySchema: Schema<IPropertySchema> = new Schema(
 			default: 0,
 			required: [true, 'The Property must has a number of bathrooms'],
 		},
+		city: {
+			type: Schema.Types.ObjectId,
+			ref: 'City',
+			required: [true, 'The Property must has a city'],
+		},
+		area: {
+			type: String,
+			required: [true, 'The Property must has a area size'],
+		},
 	},
 	{
 		timestamps: true,
@@ -118,6 +127,15 @@ propertySchema.pre('save', async function (next) {
 });
 
 // *** Query Middleware
+
+// serve city info
+propertySchema.pre(/^find/, function (next) {
+	this.populate({
+		path: 'city',
+		select: 'city_name_ar city_name_en',
+	});
+	next();
+});
 
 // +[2] not serve Property is not approved
 // propertySchema.pre(/^find/, function (next) {
