@@ -45,7 +45,9 @@ export const propertySchema: Schema<IPropertySchema> = new Schema(
 		},
 		owner: {
 			_id: {
-				type: String,
+				type: Schema.Types.ObjectId,
+				ref: 'User',
+				required: [true, 'The Property must has a owner'],
 			},
 			name: {
 				type: String,
