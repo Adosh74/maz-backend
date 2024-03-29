@@ -11,22 +11,8 @@ export const getOneProperty = Factory.getOne(Property, 'owner');
 // export const createOneProperty = Factory.createOne(Property);
 export const createOneProperty = catchAsync(
 	async (req: Request, res: Response, next: NextFunction) => {
-		const { name, description, price, address, images, contract, location } =
-			req.body;
-
-		const owner = { _id: (req as any).user.id };
-
 		// +[2] create property
-		const property = await Property.create({
-			name: name,
-			description,
-			price,
-			address,
-			images,
-			contract,
-			location,
-			owner,
-		});
+		const property = await Property.create(req.body);
 
 		// +[3] send response
 		res.status(201).json({
