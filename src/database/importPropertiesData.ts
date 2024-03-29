@@ -9,7 +9,7 @@ const properties = JSON.parse(
 
 const insertData = async () => {
 	try {
-		await Property.insertMany(properties);
+		await Property.create(properties);
 		LOGGER.info('Properties data successfully loaded');
 	} catch (error) {
 		LOGGER.error(error);
