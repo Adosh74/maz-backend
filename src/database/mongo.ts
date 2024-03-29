@@ -1,6 +1,10 @@
 import dotenv from 'dotenv';
 import mongoose from 'mongoose';
 import { LOGGER } from '../logging';
+import './../models/city.model';
+import './../models/property.model';
+import './../models/user.model';
+import './../models/userFavorite.model';
 
 dotenv.config({ path: `${process.cwd()}/.env` });
 
