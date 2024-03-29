@@ -6,6 +6,12 @@ interface IOwner {
 	phone: string;
 	whatsapp: string;
 }
+
+interface ICity {
+	_id: string;
+	city_name_ar: string;
+	city_name_en: string;
+}
 interface ILocation {
 	type: string;
 	coordinates: [number];
@@ -23,6 +29,9 @@ export interface IPropertySchema extends Document {
 	contract: string;
 	approved: boolean;
 	location: ILocation;
+	bedrooms: string;
+	bathrooms: string;
+	city: ICity;
 	find: (query: any) => any;
 }
 
@@ -48,6 +57,7 @@ export const propertySchema: Schema<IPropertySchema> = new Schema(
 				type: Schema.Types.ObjectId,
 				ref: 'User',
 				required: [true, 'The Property must has a owner'],
+				select: false,
 			},
 			name: {
 				type: String,
@@ -86,19 +96,27 @@ export const propertySchema: Schema<IPropertySchema> = new Schema(
 			description: String,
 		},
 		bedrooms: {
-			type: Number,
+			type: String,
 			default: 0,
 			required: [true, 'The Property must has a number of bedrooms'],
 		},
 		bathrooms: {
-			type: Number,
+			type: String,
 			default: 0,
 			required: [true, 'The Property must has a number of bathrooms'],
 		},
 		city: {
-			type: Schema.Types.ObjectId,
-			ref: 'City',
-			required: [true, 'The Property must has a city'],
+			_id: {
+				type: Schema.Types.ObjectId,
+				ref: 'City',
+				required: [true, 'The Property must has a city'],
+			},
+			city_name_ar: {
+				type: String,
+			},
+			city_name_en: {
+				type: String,
+			},
 		},
 		area: {
 			type: String,
@@ -117,25 +135,26 @@ propertySchema.index({ price: 1 });
 // pre save middleware to populate owner info before saving
 propertySchema.pre('save', async function (next) {
 	const owner = await this.model('User').findById(this.owner._id);
+	const city = await this.model('City').findById(this.city._id);
+	if (!owner || !city) {
+		return next(new Error('Owner or City not found'));
+	}
 	this.owner = {
 		_id: owner?._id,
 		name: owner?.name,
 		phone: owner?.phone,
 		whatsapp: owner?.whatsapp,
 	};
+	this.city = {
+		_id: city?._id,
+		city_name_ar: city?.city_name_ar,
+		city_name_en: city?.city_name_en,
+	};
 	next();
 });
+/// for insertMany
 
 // *** Query Middleware
-
-// serve city info
-propertySchema.pre(/^find/, function (next) {
-	this.populate({
-		path: 'city',
-		select: 'city_name_ar city_name_en',
-	});
-	next();
-});
 
 // +[2] not serve Property is not approved
 // propertySchema.pre(/^find/, function (next) {
