@@ -12,12 +12,12 @@ interface ICity {
 	city_name_ar: string;
 	city_name_en: string;
 }
-interface ILocation {
-	type: string;
-	coordinates: [number];
-	address: string;
-	description: string;
-}
+// interface ILocation {
+// 	type: string;
+// 	coordinates: [number];
+// 	address: string;
+// 	description: string;
+// }
 export interface IPropertySchema extends Document {
 	_id: string;
 	name: string;
@@ -28,7 +28,7 @@ export interface IPropertySchema extends Document {
 	images: [string];
 	contract: string;
 	approved: boolean;
-	location: ILocation;
+	// location: ILocation;
 	bedrooms: string;
 	bathrooms: string;
 	city: ICity;
@@ -85,16 +85,16 @@ export const propertySchema: Schema<IPropertySchema> = new Schema(
 			type: Boolean,
 			default: false,
 		},
-		location: {
-			type: {
-				type: String,
-				default: 'Point',
-				enum: ['Point'],
-			},
-			coordinates: [Number],
-			address: String,
-			description: String,
-		},
+		// location: {
+		// 	type: {
+		// 		type: String,
+		// 		default: 'Point',
+		// 		enum: ['Point'],
+		// 	},
+		// 	coordinates: [Number],
+		// 	address: String,
+		// 	description: String,
+		// },
 		bedrooms: {
 			type: String,
 			default: 0,
@@ -129,7 +129,7 @@ export const propertySchema: Schema<IPropertySchema> = new Schema(
 );
 
 // add indexes improve the performance of the queries
-propertySchema.index({ location: '2dsphere' });
+// propertySchema.index({ location: '2dsphere' });
 propertySchema.index({ price: 1 });
 
 // pre save middleware to populate owner info before saving
