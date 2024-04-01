@@ -260,7 +260,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{url}}api/v1/properties?sort=-bathrooms&fields=price, bathrooms, bedrooms&bedrooms[gt]=3",
+							"raw": "{{url}}api/v1/properties?sort=-bathrooms&fields=price, bathrooms, bedrooms&bedrooms[gt]=3&page=2",
 							"host": [
 								"{{url}}api"
 							],
@@ -300,6 +300,10 @@
 								{
 									"key": "bedrooms[gt]",
 									"value": "3"
+								},
+								{
+									"key": "page",
+									"value": "2"
 								}
 							]
 						}
@@ -312,13 +316,64 @@
 						"method": "POST",
 						"header": [],
 						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"area\": \"122\",\r\n\t\"name\": \"Catalyst\",\r\n    \"description\": \"Palm Hills Company is launching its new project, PX Palm Hills, in the Eastern Expansion Area, 6 October, within the Palm Hills project, on a hill 140 meters above the ground.\",\r\n    \"price\": 11319530,\r\n    \"bedrooms\": \"9\",\r\n    \"bathrooms\": \"10\",\r\n    \"address\": \"PX Palm Hills, 6th of October, Giza\",\r\n    \"images\": [\r\n\t\t\t\"https://bayut-eg-production.s3.amazonaws.com/thumbnails/15921643-800x600.webp\",\r\n\t\t\t\"https://bayut-eg-production.s3.amazonaws.com/thumbnails/15921648-800x600.webp\",\r\n\t\t\t\"https://bayut-eg-production.s3.amazonaws.com/thumbnails/15921645-800x600.webp\",\r\n\t\t\t\"https://bayut-eg-production.s3.amazonaws.com/thumbnails/15921646-800x600.webp\"\r\n\t\t],\r\n    \"owner\": {\r\n        \"_id\": \"65f624aec672e327780ae613\"\r\n\t\t},\r\n    \"approved\": true,\r\n    \"location\": {\r\n    \"type\": \"Point\",\r\n    \"coordinates\": [-30.9997, 30.9997],\r\n    \"address\": \"PX Palm Hills, 6th of October, Giza\",\r\n            \"description\": \"Palm Hills Company is launching its new project, PX Palm Hills, in the Eastern Expansion Area, 6 October, within the Palm Hills project, on a hill 140 meters above the ground.\"\r\n\t\t},  \r\n\t\t\"contract\": \"test\",\r\n\t\t\"city\": {\r\n\t\t\t\"_id\": \"6603cdb48cc36a22dc4eb012\"\r\n\t\t}\r\n        \r\n\t}",
-							"options": {
-								"raw": {
-									"language": "json"
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "area",
+									"value": "122",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "Catalyst",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Palm Hills Company is launching its new project, PX Palm Hills, in the Eastern Expansion Area, 6 October, within the Palm Hills project, on a hill 140 meters above the ground.",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "11319530",
+									"type": "text"
+								},
+								{
+									"key": "bedrooms",
+									"value": "5",
+									"type": "text"
+								},
+								{
+									"key": "bathrooms",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": "PX Palm Hills, 6th of October, Giza",
+									"type": "text"
+								},
+								{
+									"key": "approved",
+									"value": "true",
+									"type": "text"
+								},
+								{
+									"key": "contract",
+									"type": "file",
+									"src": "/C:/Users/SHEBL/Desktop/CV/Resume.pdf"
+								},
+								{
+									"key": "city",
+									"value": "6603cdb48cc36a22dc4eb012",
+									"type": "text"
+								},
+								{
+									"key": "images",
+									"type": "file",
+									"src": "/C:/Users/SHEBL/Desktop/CV/273623335_4854318841312816_70384317858996062771111_n.jpg"
 								}
-							}
+							]
 						},
 						"url": {
 							"raw": "{{url}}api/v1/properties",
