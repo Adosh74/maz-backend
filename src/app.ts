@@ -14,6 +14,9 @@ export const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+// serve static files
+app.use(express.static('public'));
+
 // parse cookies
 app.use(cookieParser());
 
