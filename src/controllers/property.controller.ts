@@ -12,6 +12,10 @@ export const getOneProperty = Factory.getOne(Property, 'owner');
 export const createOneProperty = catchAsync(
 	async (req: Request, res: Response, next: NextFunction) => {
 		// +[2] create property
+
+		req.body.owner = { _id: (req as any).user.id };
+		req.body.city = { _id: req.body.city };
+		req.body.area = req.body.area * 1;
 		const property = await Property.create(req.body);
 
 		// +[3] send response
