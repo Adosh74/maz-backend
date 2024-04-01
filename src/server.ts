@@ -1,7 +1,7 @@
 import dotenv from 'dotenv';
 import { app as server } from './app';
 import './database/mongo';
-import './database/redis';
+//import './database/redis';
 import { LOGGER } from './logging';
 
 dotenv.config({ path: `${process.cwd()}/.env` });
