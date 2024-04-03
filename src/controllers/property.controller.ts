@@ -1,4 +1,6 @@
 import { NextFunction, Request, Response } from 'express';
+import fs from 'fs';
+import path from 'path';
 import Property, { IPropertySchema } from '../models/property.model';
 import AppError from '../utils/AppError.util';
 import catchAsync from '../utils/catchAsync.util';
@@ -90,6 +92,97 @@ export const deleteOneProperty = catchAsync(
 		res.status(204).json({
 			status: 'success',
 			data: null,
+		});
+	}
+);
+
+// *** My properties
+export const getMyProperties = catchAsync(
+	async (req: Request, res: Response, next: NextFunction) => {
+		const userId = (req as any).user.id;
+		const properties = await Property.find({ 'owner._id': userId });
+
+		res.status(200).json({
+			status: 'success',
+			results: properties.length,
+			data: {
+				properties,
+			},
+		});
+	}
+);
+
+// *** delete image from property
+export const deleteImage = catchAsync(
+	async (req: Request, res: Response, next: NextFunction) => {
+		const property: IPropertySchema | null = await Property.findById(
+			req.params.id
+		).select('+owner._id');
+
+		if (!property) {
+			return next(new AppError('No property found with that ID', 404));
+		}
+
+		if (
+			property?.owner._id.toString() !== (req as any).user.id &&
+			(req as any).user.role !== 'admin'
+		) {
+			return next(new AppError('You are not allowed to delete this property', 403));
+		}
+
+		const images = property.images.filter((image) => image !== req.body.image);
+
+		// delete image from public/properties
+		fs.unlinkSync(path.join(__dirname, `../../public/properties/${req.body.image}`));
+
+		property.images = images as [string];
+		await property.save();
+
+		res.status(200).json({
+			status: 'success',
+			data: {
+				property,
+			},
+		});
+	}
+);
+
+// *** add image to property
+export const addImages = catchAsync(
+	async (req: Request, res: Response, next: NextFunction) => {
+		const property: IPropertySchema | null = await Property.findById(
+			req.params.id
+		).select('+owner._id');
+
+		if (!property) {
+			return next(new AppError('No property found with that ID', 404));
+		}
+		console.log(property?.owner._id.toString(), (req as any).user.id);
+
+		console.log(property?.owner._id.toString() === (req as any).user.id);
+
+		if (
+			property?.owner._id.toString() !== (req as any).user.id &&
+			(req as any).user.role !== 'admin'
+		) {
+			return next(
+				new AppError('You are not allowed to upload images on this property', 403)
+			);
+		}
+
+		const images = property.images;
+
+		images.push(...req.body.images);
+
+		property.images = images as [string];
+
+		await property.save();
+
+		res.status(200).json({
+			status: 'success',
+			data: {
+				property,
+			},
 		});
 	}
 );
