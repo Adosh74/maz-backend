@@ -3,6 +3,7 @@ import mongoose, { Schema, Document, Model } from 'mongoose';
 interface IOwner {
 	_id: string;
 	name: string;
+	email: string;
 	phone: string;
 	whatsapp: string;
 }
@@ -142,6 +143,7 @@ propertySchema.pre('save', async function (next) {
 	this.owner = {
 		_id: owner?._id,
 		name: owner?.name,
+		email: owner?.email,
 		phone: owner?.phone,
 		whatsapp: owner?.whatsapp,
 	};
