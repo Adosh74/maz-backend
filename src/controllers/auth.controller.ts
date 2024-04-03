@@ -99,7 +99,7 @@ export const signup = catchAsync(
 		// });
 
 		// +[4] Send welcome email
-		welcomeEmail({ to: newUser.email, subject: 'Welcome to the MAZ Realty!' });
+		// welcomeEmail({ to: newUser.email, subject: 'Welcome to the MAZ Realty!' });
 		// +[5] Send token
 		createSendToken(newUser, 201, res);
 	}
