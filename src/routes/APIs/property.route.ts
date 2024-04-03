@@ -10,10 +10,19 @@ routes
 	.get(propertyController.getAllProperty)
 	.post(upload, authController.protect, propertyController.createOneProperty);
 
+routes.get('/my-properties', authController.protect, propertyController.getMyProperties);
+routes.patch('/delete-image/:id', authController.protect, propertyController.deleteImage);
+routes.patch(
+	'/add-images/:id',
+	upload,
+	authController.protect,
+	propertyController.addImages
+);
+
 routes
 	.route('/:id')
 	.get(propertyController.getOneProperty)
-	.patch(propertyController.updateOneProperty)
-	.delete(propertyController.deleteOneProperty);
+	.patch(authController.protect, propertyController.updateOneProperty)
+	.delete(authController.protect, propertyController.deleteOneProperty);
 
 export default routes;
