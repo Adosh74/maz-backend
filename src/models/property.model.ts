@@ -2,10 +2,10 @@ import mongoose, { Schema, Document, Model } from 'mongoose';
 
 interface IOwner {
 	_id: string;
-	name: string;
-	email: string;
-	phone: string;
-	whatsapp: string;
+	name?: string;
+	email?: string;
+	phone?: string;
+	whatsapp?: string;
 }
 
 interface ICity {
