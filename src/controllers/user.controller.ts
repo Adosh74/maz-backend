@@ -1,4 +1,5 @@
 import { NextFunction, Request, Response } from 'express';
+import Property from '../models/property.model';
 import User from '../models/user.model';
 import filterObj from '../utils/filterObj.util';
 import * as Factory from './handlerFactory.controller';
@@ -30,12 +31,27 @@ export const updateMe = async (req: Request, res: Response, next: NextFunction) 
 	}
 
 	// 2) Filtered out unwanted fields names that are not allowed to be updated
-	const filteredBody = filterObj(req.body, 'name', 'email');
+	const filteredBody = filterObj(req.body, 'name', 'email', 'phone', 'whatsapp');
 	// 3) Update user document
 	const updatedUser = await User.findByIdAndUpdate((req as any).user.id, filteredBody, {
 		new: true,
 		runValidators: true,
 	});
+
+	// check if user has property and update the owner info
+	if (updatedUser)
+		await Property.updateMany(
+			{ 'owner._id': (req as any).user.id },
+			{
+				owner: {
+					_id: updatedUser._id,
+					name: updatedUser?.name,
+					email: updatedUser?.email,
+					phone: updatedUser?.phone,
+					whatsapp: updatedUser?.whatsapp,
+				},
+			}
+		);
 
 	res.status(200).json({
 		status: 'success',
