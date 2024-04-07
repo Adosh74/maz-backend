@@ -125,7 +125,7 @@ export const propertySchema: Schema<IPropertySchema> = new Schema(
 		},
 		type: {
 			type: String,
-			enum: ['apartment', 'villa', 'office', 'shop', 'land', 'warehouse'],
+			enum: ['apartment', 'villa', 'office', 'shop'],
 			default: 'apartment',
 		},
 		transaction: {
