@@ -123,6 +123,16 @@ export const propertySchema: Schema<IPropertySchema> = new Schema(
 			type: String,
 			required: [true, 'The Property must has a area size'],
 		},
+		type: {
+			type: String,
+			enum: ['apartment', 'villa', 'office', 'shop', 'land', 'warehouse'],
+			default: 'apartment',
+		},
+		transaction: {
+			type: String,
+			enum: ['sale', 'rent'],
+			default: 'sale',
+		},
 	},
 	{
 		timestamps: true,
