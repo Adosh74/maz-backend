@@ -1,6 +1,7 @@
 import { Router } from 'express';
 import * as authController from '../../controllers/auth.controller';
 import * as userController from '../../controllers/user.controller';
+import * as userImageUtil from '../../utils/userImage.util';
 
 const routes = Router();
 
@@ -16,7 +17,12 @@ routes.route('/updateMyPassword').patch(authController.updatePassword);
 // get current user
 routes.route('/me').get(userController.getMe, userController.getOneUser);
 // update current user
-routes.patch('/updateMe', userController.updateMe);
+routes.patch(
+	'/updateMe',
+	userImageUtil.uploadUserPhoto,
+	userImageUtil.resizeUserPhoto,
+	userController.updateMe
+);
 
 // *** restrict to specific roles (middleware) *** //
 routes.use(authController.restrictTo('admin'));
