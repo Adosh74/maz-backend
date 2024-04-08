@@ -1,37 +1,45 @@
+import dotenv from 'dotenv';
 import ejs from 'ejs';
-import nodemailer, { Transporter } from 'nodemailer';
+import nodemailer from 'nodemailer';
 import path from 'path';
+import { LOGGER } from '../logging';
 
-interface IEmailOptions {
+dotenv.config();
+
+interface ISendMailOptions {
 	email: string;
 	subject: string;
 	template: string;
-	data: { [key: string]: any };
+	data?: any;
 }
 
-const sendMail = async (options: IEmailOptions): Promise<void> => {
-	const transporter: Transporter = nodemailer.createTransport({
-		pool: true,
-		service: `${process.env.SMTP_SERVICE}`,
+const sendMail = async (options: ISendMailOptions) => {
+	const transporter = nodemailer.createTransport({
+		service: 'mandrillapp',
+		host: process.env.SENDINBLUE_HOST,
+		port: parseInt(process.env.SENDINBLUE_PORT || '587'),
 		auth: {
-			user: `${process.env.SMTP_USERNAME}`,
-			pass: `${process.env.SMTP_PASSWORD}`,
+			user: process.env.SENDINBLUE_USERNAME,
+			pass: process.env.SENDINBLUE_PASSWORD,
 		},
 	});
 
 	const { email, subject, template, data } = options;
 
-	const templateFile = path.join(__dirname, `./../mails/${template}`);
+	// get template path
+	const templatePath = path.join(__dirname, `../mails/${template}`);
 
-	const html: string = await ejs.renderFile(templateFile, data);
+	// render email template with ejs
+	const html = await ejs.renderFile(templatePath, data);
 
-	const mailOptions = {
-		from: process.env.MAIL_USER,
+	const emailOptions: nodemailer.SendMailOptions = {
+		from: `MAZ Realty Team 🏠 <${process.env.SENDINBLUE_EMAIL}>`,
 		to: email,
 		subject,
-		html,
+		html: html as string, // Specify the type of html as string
 	};
-	await transporter.sendMail(mailOptions);
+
+	await transporter.sendMail(emailOptions);
 };
 
 export default sendMail;
