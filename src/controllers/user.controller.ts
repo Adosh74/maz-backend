@@ -32,7 +32,22 @@ export const updateMe = async (req: Request, res: Response, next: NextFunction) 
 
 	// 2) Filtered out unwanted fields names that are not allowed to be updated
 	const filteredBody = filterObj(req.body, 'name', 'email', 'phone', 'whatsapp');
-	// 3) Update user document
+
+	// 3) If user is trying to update email, check if the email is already taken
+	if (req.body.email) {
+		const user = await User.findOne({ email: req.body.email });
+		if (user && user._id.toString() !== (req as any).user.id) {
+			return next({
+				statusCode: 400,
+				message: 'Email already taken. Please use a different email.',
+			});
+		}
+	}
+
+	// 4) If user is trying to update photo, add the photo to the filteredBody
+	if (req.file) filteredBody.photo = req.file.filename;
+
+	// 5) Update user document
 	const updatedUser = await User.findByIdAndUpdate((req as any).user.id, filteredBody, {
 		new: true,
 		runValidators: true,
