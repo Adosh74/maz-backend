@@ -7,10 +7,7 @@ export interface IUserSchema extends Document {
 	_id: string;
 	name: string;
 	email: string;
-	photo: {
-		public_id: string;
-		url: string;
-	};
+	photo: string;
 	role: string;
 	phone?: string;
 	whatsapp?: string;
@@ -131,6 +128,8 @@ userSchema.methods.createPasswordResetToken = function () {
 
 	return resetToken;
 };
+
+// delete user photo from public/img/users
 
 const User: Model<IUserSchema> = mongoose.model('User', userSchema);
 
