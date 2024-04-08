@@ -43,8 +43,8 @@ const userSchema: Schema<IUserSchema> = new Schema({
 		validate: [validator.isEmail, 'Please provide a valid email'],
 	},
 	photo: {
-		public_id: String,
-		url: String,
+		type: String,
+		default: 'default.jpg',
 	},
 	role: {
 		type: String,
