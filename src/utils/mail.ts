@@ -2,7 +2,6 @@ import dotenv from 'dotenv';
 import ejs from 'ejs';
 import nodemailer from 'nodemailer';
 import path from 'path';
-import { LOGGER } from '../logging';
 
 dotenv.config();
 
