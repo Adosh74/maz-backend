@@ -1,4 +1,6 @@
 import { NextFunction, Request, Response } from 'express';
+import fs from 'fs';
+import { LOGGER } from '../logging';
 import Property from '../models/property.model';
 import User from '../models/user.model';
 import filterObj from '../utils/filterObj.util';
@@ -47,6 +49,8 @@ export const updateMe = async (req: Request, res: Response, next: NextFunction) 
 	// 4) If user is trying to update photo, add the photo to the filteredBody
 	if (req.file) filteredBody.photo = req.file.filename;
 
+	const oldUserPhoto = await User.findById((req as any).user.id).select('photo');
+
 	// 5) Update user document
 	const updatedUser = await User.findByIdAndUpdate((req as any).user.id, filteredBody, {
 		new: true,
@@ -67,6 +71,16 @@ export const updateMe = async (req: Request, res: Response, next: NextFunction) 
 				},
 			}
 		);
+
+	// 6) If user updated photo, delete the old photo
+	if (req.file && oldUserPhoto && oldUserPhoto.photo !== 'default.jpg') {
+		fs.unlink(`${process.cwd()}/public/img/users/${oldUserPhoto.photo}`, (err) => {
+			if (err) {
+				LOGGER.error(`Error deleting old user photo: ${err}`);
+				return;
+			}
+		});
+	}
 
 	res.status(200).json({
 		status: 'success',
