@@ -1,15 +1,13 @@
 // import crypto from 'crypto';
-// import ejs from 'ejs';
+import ejs from 'ejs';
 import { NextFunction, Request, Response } from 'express';
 import jwt, { JwtPayload } from 'jsonwebtoken';
+import path from 'path';
 import { LOGGER } from '../logging';
-// import path from 'path';
 import User, { IUserSchema } from '../models/user.model';
-import { welcomeEmail } from '../services/sendEmail.service';
 import AppError from '../utils/AppError.util';
 import catchAsync from '../utils/catchAsync.util';
-
-// import sendEmail from '../utils/mail';
+import sendMail from '../utils/mail';
 
 // *** Sign JWT token
 const signToken = (id: string, role: string) => {
@@ -78,35 +76,24 @@ export const signup = catchAsync(
 			phone: req.body.phone,
 		});
 
-		// +[3] user data to send email
-		// const user = {
-		// 	name: newUser.name.split(' ')[0],
-		// };
+		// +[3] prepare data that will be sent to the email template
+		const data = { user: { name: newUser.name.split(' ')[0] } };
 
-		// // +[4] html template path
-		// const html = await ejs.renderFile(
-		// 	path.join(__dirname, './../mails/welcome.ejs'),
-		// 	{
-		// 		user,
-		// 	}
-		// );
+		// +[4] render email template
+		await ejs.renderFile(path.join(__dirname, '../mails/welcome.ejs'), data);
 
-		// await sendEmail({
-		// 	email: newUser.email,
-		// 	subject: 'Welcome to the MAZ Realty!',
-		// 	template: 'welcome.ejs',
-		// 	data: { user },
-		// });
+		await sendMail({
+			email: newUser.email,
+			subject: 'Welcome to MAZ Realty!',
+			template: 'welcome.ejs',
+			data,
+		});
 
-		// +[4] Send welcome email
-		// welcomeEmail({ to: newUser.email, subject: 'Welcome to the MAZ Realty!' });
-		// +[5] Send token
 		createSendToken(newUser, 201, res);
 	}
 );
 
 // *** login
-
 export const login = catchAsync(
 	async (req: Request, res: Response, next: NextFunction) => {
 		const { email, password } = req.body;
