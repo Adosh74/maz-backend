@@ -18,6 +18,18 @@ const ApprovedPropSchema = new Schema<IApprovedProp>({
 	},
 });
 
+// pre middleware to populate the user info and property info
+ApprovedPropSchema.pre(/^find/, function (next) {
+	this.populate({
+		path: 'lawyer',
+		select: 'name email phone whatsapp role -_id',
+	}).populate({
+		path: 'property',
+		select: 'name address price images -_id',
+	});
+	next();
+});
+
 const ApprovedProp = mongoose.model<IApprovedProp>('ApprovedProp', ApprovedPropSchema);
 
 export default ApprovedProp;
