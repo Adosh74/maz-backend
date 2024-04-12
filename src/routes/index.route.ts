@@ -1,4 +1,5 @@
 import { Router } from 'express';
+import adminRoutes from './APIs/admin.route';
 import authRoutes from './APIs/auth.route';
 import cityRoutes from './APIs/city.route';
 import lawyerRoutes from './APIs/lawyer.route';
@@ -16,5 +17,6 @@ routes.use('/properties', propertyRoutes);
 routes.use('/favorites', userFavoriteRoutes);
 routes.use('/cities', cityRoutes);
 routes.use('/lawyers', lawyerRoutes);
+routes.use('/admin', adminRoutes);
 
 export default routes;
