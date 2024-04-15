@@ -18,6 +18,8 @@ export const createOneProperty = catchAsync(
 		req.body.owner = { _id: (req as any).user.id };
 		req.body.city = { _id: req.body.city };
 		req.body.area = req.body.area * 1;
+		req.body.price = req.body.price * 1;
+		req.body.level = req.body.level * 1;
 		const property = await Property.create(req.body);
 
 		// +[3] send response
