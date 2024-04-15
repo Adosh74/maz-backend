@@ -33,6 +33,8 @@ export interface IPropertySchema extends Document {
 	bedrooms: string;
 	bathrooms: string;
 	city: ICity;
+	Furnished: boolean;
+	level: number;
 	find: (query: any) => any;
 }
 
@@ -133,6 +135,14 @@ export const propertySchema: Schema<IPropertySchema> = new Schema(
 			enum: ['sale', 'rent'],
 			default: 'sale',
 		},
+		Furnished: {
+			type: Boolean,
+			default: false,
+		},
+		level: {
+			type: Number,
+			default: 0,
+		},
 	},
 	{
 		timestamps: true,
@@ -142,6 +152,15 @@ export const propertySchema: Schema<IPropertySchema> = new Schema(
 // add indexes improve the performance of the queries
 // propertySchema.index({ location: '2dsphere' });
 propertySchema.index({ price: 1 });
+// full text search index
+propertySchema.index({
+	name: 'text',
+	type: 'text',
+	description: 'text',
+	address: 'text',
+	'city.city_name_ar': 'text',
+	'city.city_name_en': 'text',
+});
 
 // pre save middleware to populate owner info before saving
 propertySchema.pre('save', async function (next) {
