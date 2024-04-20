@@ -1,3 +1,3 @@
 # Graduation Project
 
-mazrealty.live
+https://mazrealty.live
