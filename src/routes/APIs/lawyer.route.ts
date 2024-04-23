@@ -4,7 +4,7 @@ import * as lawyerController from '../../controllers/lawyer.controller';
 
 const router = Router();
 
-router.use(authController.protect, authController.restrictTo('lawyer'));
+router.use(authController.protect, authController.restrictTo('lawyer', 'admin'));
 
 router.get('/not-approved', lawyerController.getNotApproved);
 router.patch('/approve-property/:propertyId', lawyerController.approveProperty);
