@@ -10,15 +10,13 @@ const storage = multer.diskStorage({
 		const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1e9);
 		const extension = path.extname(file.originalname);
 		cb(null, 'property' + '-' + uniqueSuffix + extension);
-		// add file name to the req.body.images
-		if (!req.body.images && file.mimetype.startsWith('image')) {
+		if (!req.body.images) {
 			req.body.images = [];
-
-			req.body.images.push('property' + '-' + uniqueSuffix + extension);
-		} else if (file.mimetype.startsWith('image') && req.body.images) {
+		}
+		if (file.fieldname === 'images') {
 			req.body.images.push('property' + '-' + uniqueSuffix + extension);
 		}
-		if (file.mimetype === 'application/pdf') {
+		if (file.fieldname === 'contract') {
 			req.body.contract = 'property' + '-' + uniqueSuffix + extension;
 		}
 	},
