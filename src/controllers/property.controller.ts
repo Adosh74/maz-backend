@@ -8,8 +8,8 @@ import * as Factory from './handlerFactory.controller';
 
 // *** CRUD operation for property
 
-export const getAllProperty = Factory.getAll(Property);
-export const getOneProperty = Factory.getOne(Property, 'owner');
+export const getAllProperty = Factory.getAll(Property, 'property');
+export const getOneProperty = Factory.getOne(Property, 'owner', 'property');
 // export const createOneProperty = Factory.createOne(Property);
 export const createOneProperty = catchAsync(
 	async (req: Request, res: Response, next: NextFunction) => {

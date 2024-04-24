@@ -7,7 +7,7 @@ import catchAsync from '../utils/catchAsync.util';
 // *** Factory Functions
 
 // +[1] getAll - get all documents from a collection (Model)
-export const getAll = (Model: Model<any>) =>
+export const getAll = (Model: Model<any>, modelName?: string) =>
 	catchAsync(async (req: Request, res: Response, next: NextFunction) => {
 		const features = new APIFeatures(Model.find(), req.query)
 			.filter()
@@ -16,6 +16,20 @@ export const getAll = (Model: Model<any>) =>
 			.paginate();
 
 		const docs = await features.query;
+
+		if (modelName === 'property') {
+			docs.forEach((doc: any) => {
+				doc.images.forEach((img: string) => {
+					if (!img.startsWith('https')) {
+						console.log('img', img);
+
+						doc.images[doc.images.indexOf(img)] = `${
+							req.protocol
+						}://${req.get('host')}/img/properties/${img}`;
+					}
+				});
+			});
+		}
 
 		res.status(200).json({
 			status: 'success',
@@ -27,7 +41,7 @@ export const getAll = (Model: Model<any>) =>
 	});
 
 // +[2] getOne - get one document from a collection (Model) by id
-export const getOne = (Model: Model<any>, popOptions?: any) =>
+export const getOne = (Model: Model<any>, popOptions?: any, modelName?: string) =>
 	catchAsync(async (req: Request, res: Response, next: NextFunction) => {
 		const { id } = req.params;
 		let query = Model.findById(id);
@@ -36,6 +50,16 @@ export const getOne = (Model: Model<any>, popOptions?: any) =>
 
 		if (!doc) {
 			return next(new AppError('No document found with that ID', 404));
+		}
+
+		if (modelName === 'property') {
+			doc.images.forEach((img: string) => {
+				if (!img.startsWith('https')) {
+					doc.images[doc.images.indexOf(img)] = `${req.protocol}://${req.get(
+						'host'
+					)}/img/properties/${img}`;
+				}
+			});
 		}
 
 		res.status(200).json({
