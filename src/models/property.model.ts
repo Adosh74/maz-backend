@@ -188,10 +188,10 @@ propertySchema.pre('save', async function (next) {
 // *** Query Middleware
 
 // +[2] not serve Property is not approved
-propertySchema.pre(/^find/, function (next) {
-	this.find({ approved: { $ne: false } });
-	next();
-});
+// propertySchema.pre(/^find/, function (next) {
+// 	this.find({ approved: { $ne: false } });
+// 	next();
+// });
 
 const Property: Model<IPropertySchema> = mongoose.model('Property', propertySchema);
 
